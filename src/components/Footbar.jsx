@@ -1,5 +1,5 @@
 const Footbar = () => {
-   return 
+   return null
  }
  
  export default Footbar

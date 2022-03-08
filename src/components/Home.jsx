@@ -1,5 +1,7 @@
+import Details from "../commons/Details"
+
 const Home = () => {
-   return 
+   return <Details />
  }
  
  export default Home
