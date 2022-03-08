@@ -1,25 +1,44 @@
-const products = require('./products.json')
+const S = require('sequelize');
+const db = require('./db');
+
+class Products extends S.Model {}
+
+Products.init({
+    nombre: {
+        type: S.STRING,
+        allowNull: false,
+        validate:{
+        isAlpha: true
+        }
+    },
+    precio:{
+        type: S.INTEGER,
+        allowNull: false,
+    },
+    descripcion:{
+        type: S.STRING,
+        allowNull: false,
+    },
+    categoria:{
+        type: S.STRING,
+        allowNull: false,
+    },
+    marca:{
+        type: S.STRING,
+        allowNull: false,
+    }, 
+    imagen:{
+      type: S.STRING,
+      allowNull: false,
+    },
+    stock:{
+        type: S.INTEGER,
+        allowNull: false,
+    },
+}, { sequelize: db, modelName: 'products' });   
 
 
-class Product extends Model {}
-
-const createProduct = () => {
-    return(
-        /* products.map((productSold) => {
-            Product.create({
-                nombre: productSold.nombre,
-                precio: productSold.precio,
-                descripcion: productSold.descripcion,
-                categorias: productSold.categorias,
-                marca: productSold.marca,
-                imagen: productSold.imagen,
-                stock: productSold.stock
-              }, { sequelize: db, modelName: 'products' }); 
-        })*/
-    ) 
-}
-
-module.exports = createProduct
+module.exports = Products;
     
 
       
