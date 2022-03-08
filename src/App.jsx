@@ -1,3 +1,4 @@
+import "./templates/tiles.css"
 import Footbar from "./components/Footbar";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";

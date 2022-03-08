@@ -1,12 +1,12 @@
 [
     {
         "nombre": "Guitarra 1",
-        "precio":129999.99,
-        "descripcion": "Guitarra 1",
-        "categorias": "Electrica" ,
+        "precio":10,
+        "descripcion": "guitarra 1",
+        "categorias": "electrica" ,
         "marca": "Gibson",
         "imagen": "https://m.media-amazon.com/images/I/31uOScWxZdL._SL500_.jpg",
-        "stock": 120
+        "stock": 10
     },
     {
         "nombre": "Guitarra 1",
