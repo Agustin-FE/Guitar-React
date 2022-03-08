@@ -1,5 +1,5 @@
 const SearchBar = () => {
-   return 
+   return null
  }
  
  export default SearchBar
