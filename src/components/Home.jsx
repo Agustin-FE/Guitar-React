@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react"
 import productos from "./products.json"
 import axios from "axios"
@@ -27,3 +28,4 @@ const Home = () => {
 
  
  export default Home
+
