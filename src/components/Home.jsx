@@ -8,10 +8,10 @@ import Tiles from "../commons/Tiles"
 const Home = () => {
     
   useEffect( ()=> {
-    /*axios
-    .get("/api/products")????????
+    axios
+    .get("http://localhost:3001/api/product/guitar")
     .then(res => res.data)
-    .then(data => console.log(data) )*/
+    .then(data => console.log(data) )
     console.log( "Los productos seran importados desde aqui" )
   }, [] )
   

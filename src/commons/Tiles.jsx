@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const Tiles = ( { producto } ) => {
-
+   const id = producto.id
    return ( 
       <div className="tile">
          <Link to = "/details" >
