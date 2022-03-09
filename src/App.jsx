@@ -1,5 +1,6 @@
 import React from "react";
 import "./templates/tiles.css"
+import "./templates/home.css"
 import { Routes, Route } from "react-router";
 
 import Footbar from "./components/Footbar";
