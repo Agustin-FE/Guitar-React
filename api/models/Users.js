@@ -35,7 +35,7 @@ User.init({
     type: S.STRING,
     allowNull: false,
   }, 
-  favorite:{
+  carrito:{
       type: S.ARRAY(S.JSON),
       defaultValue: [],
       allowNull: false,
@@ -55,5 +55,9 @@ User.beforeCreate((user) => {
       user.password=hash
   })
 })
+
+User.Prototype.givecarrito = function() {
+  return(this.carrito)
+}
 
 module.exports = User;
