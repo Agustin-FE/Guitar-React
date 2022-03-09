@@ -1,6 +1,6 @@
 const express = require('express')
 const routerProduct = express.Router()
-const {Product} = require('../models/index')
+const Product = require('../models/Products')
 
 
 routerProduct.get("/guitar", (req,res) => {

@@ -1,6 +1,5 @@
 const S = require('sequelize');
 const db = require('./db');
-const User= require('./Users')
 
 class Products extends S.Model {}
 
