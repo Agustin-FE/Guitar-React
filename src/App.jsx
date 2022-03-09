@@ -6,26 +6,15 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
 import Header from "./components/Header";
+import Details from "./commons/Details";
 
 
 const App = () => {
   return (
     <>
      
-      <Header />
-      <Navbar />
-      <SearchBar />
+      <Details />
       
-
-
-    <Routes>
-      <Route path="/" element={<Home />}/>
-      {/* <Route path="/profile" element={<Profile />}/> */}
-    </Routes>
-
-    <Footbar />
-      
-
     </>
   );
 };
