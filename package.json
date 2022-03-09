@@ -41,7 +41,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon api/server.js",
-    "client": "react-scripts start"
+    "client": "react-scripts start",
+    "seed": "node api/models/creatorProducts.js"
   },
   "eslintConfig": {
     "extends": [
