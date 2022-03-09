@@ -1,10 +1,10 @@
 const db = require('./db');
 const User = require('./Users');
 const Product = require('./Products')
-const Carrito = require('./Carrito')
+//const Carrito = require('./Carrito')
 
-User.hasOne(Carrito)
-Carrito.belongsTo(User)
+User.belongsToMany(Product, { as: "idCarrito" , through: "idCarrito"});
+Product.belongsToMany(User, { as: "idCarrito" , through: "idCarrito"});
 
 
-module.exports = db;
+module.exports = {db, User, Product}

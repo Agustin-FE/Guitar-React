@@ -56,8 +56,4 @@ User.beforeCreate((user) => {
   })
 })
 
-User.Prototype.givecarrito = function() {
-  return(this.carrito)
-}
-
 module.exports = User;
