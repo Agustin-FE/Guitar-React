@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
 import Jimi from "./components/Jimi";
 import Details from "./commons/Details"
+import Cart from "./components/Cart";
 
 
 const App = () => {
