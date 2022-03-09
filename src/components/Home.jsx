@@ -16,7 +16,7 @@ const Home = () => {
   }, [] )
   
   return (
-    <div className = "grilla container is-fluid" >
+    <div className = "grilla container is-fluid" style={ { "white-space: normal!important" }} >
       {productos.map( (producto, i) => {
         return (
           <Tiles producto = { producto } key = {i}/>

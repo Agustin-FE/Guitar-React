@@ -4,7 +4,7 @@ const SearchBar = () => {
   return (
     <div>
       <input
-        class="input is-primary"
+        className="input is-primary"
         type="text"
         placeholder="Primary input"
       ></input>
