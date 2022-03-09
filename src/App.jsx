@@ -8,23 +8,14 @@ import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
 import Header from "./components/Header";
 import Details from "./commons/Details"
+import Cart from "./components/Cart";
 
 
 const App = () => {
   return (
-    <>
-      
-      <Navbar />
-      <SearchBar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details" element={<Details />} />
-      </Routes>
-
-      <Footbar />
-
-    </>
+  <>
+      <Cart />
+      </>
   );
 };
 
