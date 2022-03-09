@@ -1,29 +1,28 @@
-import React from "react";
-import { useEffect } from "react"
-import productos from "./products.json"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
-import Details from "../commons/Details"
+
 import Tiles from "../commons/Tiles"
 
 const Home = () => {
-    
+    const [guitarList, setGuitarList] = useState([])
   useEffect( ()=> {
     axios
-    .get("http://localhost:3001/api/product/guitar")
-    .then(res => res.data)
-    .then(data => console.log(data) )
-    console.log( "Los productos seran importados desde aqui" )
+    .get( "http://localhost:3001/api/product/guitar" )
+    .then( res => res.data )
+    .then( data => {
+      setGuitarList( data ) 
+      console.log( "Ok: Productos importados" )
+    })
+    
   }, [] )
   
   return (
     <div className = "grilla container is-fluid" >
-      {productos.map( (producto, i) => {
-        return (
-          <Tiles producto = { producto } key = {i}/>
-        )
+      { guitarList.map( (producto, i) => {
+          return (
+            <Tiles producto = { producto } key = {i}/> )
       })}  
-    </div>
-  )
+    </div> )
 }
 
  

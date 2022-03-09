@@ -4,7 +4,7 @@ const Products = require('../models/Products')
 
 
 routerProducts.get("/guitar", (req,res) => {
-    Products.findAll(req.body)
+    Products.findAll()
     .then(guitar => {
         res.status(201).send(guitar)
     })
@@ -33,3 +33,5 @@ routerProducts.get("/brands/:brand", (req,res) => {
         res.status(201).send(guitar)
     })
 })
+
+module.exports = routerProducts

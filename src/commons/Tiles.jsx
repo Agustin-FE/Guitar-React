@@ -7,7 +7,7 @@ const Tiles = ( { producto } ) => {
          <Link to = "/details" >
             <div className="tile2">
                <p>{ producto.nombre }</p> 
-               <img src = { producto.imagen } width= { "150px" } />
+               <img src = "https://m.media-amazon.com/images/I/31uOScWxZdL._SL500_.jpg" width= { "150px" } />
                <p>{ producto.precio }</p>
             </div>
          </Link>

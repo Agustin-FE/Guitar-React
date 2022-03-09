@@ -13,18 +13,16 @@ import Details from "./commons/Details"
 const App = () => {
   return (
     <>
-     
-      <Details />
-    
-
-
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/details" element={<Details />} />
-    </Routes>
-
-    <Footbar />
       
+      <Navbar />
+      <SearchBar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details" element={<Details />} />
+      </Routes>
+
+      <Footbar />
 
     </>
   );
