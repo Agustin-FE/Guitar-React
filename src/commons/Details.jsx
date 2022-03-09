@@ -5,21 +5,14 @@ import arrayProduct from "../components/products.json"
 
 const Details = () =>{
     
-    //const {guitarId} = useParams();
+    const {guitarId} = useParams();
     const [guitar, setGuitar] = useState([]);
-
-    useEffect(()=>{
-        setGuitar(arrayProduct[0]);
-    })
-
-    
-    /* ************ Cuando este disponible el producto en BackEnd ****  
+ 
     useEffect(()=>{
         axios(`/api/product/${guitarId}`)
         .then((res) => res.data)
         .then((data)=> { return setGuitar(data) })
     },[guitarId])
-    */ 
 
 
 /*********** Posiblemente las categorias vengan como un Array, tener en cuenta!!! ******/
@@ -27,32 +20,35 @@ const Details = () =>{
 
 
 return (
-        
-    <div className="is-justify-content-center">
-        { guitar ?
-        <> <br/> 
-            <div >
+     <>
+    <div className="heard-details">
+        <br/> 
+            <div  >
                 <img src={guitar.imagen} alt={guitar.nombre} class="zoomImg"/>
             </div>
             <div className="description-product" >
                 <p class="title is-1 is"> <strong> {guitar.nombre} </strong></p>
                 <p class="title is-2 is-spaced"> <strong> ${guitar.precio} </strong></p>
                 <p> <strong> Cantidad disponible: </strong> {guitar.stock} </p>
-                <p> <strong> Marca: </strong> { guitar.marca} </p>
                 <p> <strong> Categorias: </strong> {guitar.categorias} </p>
                 <br/>
                 <button class="buttonCompra"> Comprar Ahora </button>
             </div> 
-        <div> 
-            <br />
-            <p class="title"> <strong> Descripción </strong> </p>
+            <div className="description-adiconal" >
+            <p class="title is-4"> <strong>  Descripción Adicional </strong></p>
             <hr/>
-            <p> { guitar.descripcion} </p>
-        </div>
-        </>   
-        : <h1> "UPS... Guitar No encontrada"</h1>
-        }
+            <p> <strong> Marca: </strong> { guitar.marca}  </p>
+
+            
+            </div> 
     </div>
+     <div className="body-details"> 
+           <br />
+           <p class="title"> <strong> Descripción </strong> </p>
+           <hr/>
+           <p> { guitar.descripcion} </p>
+       </div>
+       </>   
 );
 }
 

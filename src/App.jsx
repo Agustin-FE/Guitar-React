@@ -14,10 +14,8 @@ const App = () => {
   return (
     <>
      
-      <Header />
-      <Navbar />
-      <SearchBar />
-      
+      <Details />
+    
 
 
     <Routes>
