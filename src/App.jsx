@@ -6,17 +6,27 @@ import Footbar from "./components/Footbar";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/Searchbar";
-import Header from "./components/Header";
+import Jimi from "./components/Jimi";
 import Details from "./commons/Details"
 import Cart from "./components/Cart";
 
 
 const App = () => {
   return (
-  <>
-      <Cart />
-      </>
-  );
+    <>
+      <Navbar />
+      <SearchBar />
+      <Jimi />
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details" element={<Details />} />
+      </Routes>
+
+      <Footbar />
+
+    </>
+  );  
 };
 
 export default App

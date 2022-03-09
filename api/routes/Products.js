@@ -1,6 +1,9 @@
+const { User } = require('@auth0/auth0-react')
 const express = require('express')
+const { where } = require('sequelize/types')
 const routerProducts = express.Router()
 const Products = require('../models/Products')
+const Users = require('../models/Users')
 
 
 routerProducts.get("/guitar", (req,res) => {
@@ -11,16 +14,19 @@ routerProducts.get("/guitar", (req,res) => {
 })
 
 routerProducts.get("/:id", (req,res) => {
-    const {id} = Number(req.params)
-    Products.findOne( {where:{ id }})
-    .then(product => {
-        res.status(201).send(product)
+    const {id} = req.params
+    Products.findOne({ where: {id}})
+    .then(guitar => {
+        res.status(201).send(guitar)
     })
+      .catch(err => {
+        console.log(err)
+      })
 })
 
 routerProducts.get("/categories/:categoria", (req,res) => {
     const {categoria} = req.params
-    Products.findOne( {where:{ categoria }})
+    Products.findAll( {where:{ categoria }})
     .then(guitar => {
         res.status(201).send(guitar)
     })
@@ -34,4 +40,5 @@ routerProducts.get("/brands/:brand", (req,res) => {
     })
 })
 
-module.exports = routerProducts
+
+module.exports = routerProducts;

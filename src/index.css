@@ -1,3 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 @import "./templates/details.css";
 @import "./templates/cart.css"
+@import "./commons/Details.css";
+@import "./templates/Jimi.css";

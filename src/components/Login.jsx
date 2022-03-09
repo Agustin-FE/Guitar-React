@@ -4,8 +4,8 @@ import LoginButton from "./UserLogin";
 import { useState } from "react";
 
 const Login = () => {
-  const [loginButton, setloginButton] = useState(true);
-  const [logoutButton, setlogoutButton] = useState(false);
+  const [loginButton, setloginButton] = useState(false);
+  const [logoutButton, setlogoutButton] = useState(true);
 
   const handleSubmit = (resp) => {
     setloginButton(false);
