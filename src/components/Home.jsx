@@ -3,6 +3,7 @@ import axios from "axios"
 
 import Tiles from "../commons/Tiles"
 import FormCar from "./FormCar"
+import SingIn from "./SingIn"
 
 const Home = () => {
     
@@ -27,6 +28,7 @@ const Home = () => {
         })} 
       </div> 
       <FormCar /> 
+      <SingIn />
     </div>
     )
 }
