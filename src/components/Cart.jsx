@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import arrayProduct from "../components/products.json"
+import ListItem from "../commons/ListItem"
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
-    const [guitar, setGuitar] = useState([]);
+    const [guitars, setGuitar] = useState([]);
     
     useEffect(()=>{
         setIsLoading(true);
-        setGuitar(arrayProduct[0]);
-        setTimeout(()=>{setIsLoading(false)},2000)
+        setGuitar(arrayProduct);
+        setTimeout(3000);
+        setIsLoading(false);
     })
 
     if(isLoading)
@@ -24,7 +26,7 @@ const Cart = () =>{
 
     return (
         <>
-        
+        {guitars.map((guitar)=>( <ListItem {... guitar} /> ))} 
         </>
     );
 }
