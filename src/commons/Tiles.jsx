@@ -7,9 +7,9 @@ const Tiles = ( { producto } ) => {
       <Link to = "/details" >
         <div className="tile">
           <div className="tile2 columns">
-            <p className = "column" >{ producto.nombre }</p> 
-            <img className = "guitarimg column" src = "https://m.media-amazon.com/images/I/31uOScWxZdL._SL500_.jpg"/>
-            <p className = "column">{ producto.precio }</p>
+            <p className = "column" >{ producto.marca }</p> 
+            <img className = "guitarimg column" src = {producto.imagen}/>
+            <p className = "column">U$S { producto.precio }</p>
           </div>
         </div>
       </Link>
