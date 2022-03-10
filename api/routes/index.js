@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
-//const user = require('./Users')
-const product = require('./Products')
-//const carrito = require('./Carrito')
+const user = require('./users')
+const product = require('./products')
+//const carrito = require('./carrito')
 
-//router.use('./Users', user)
+router.use('/Users', user)
 router.use('/product', product)
-//router.use('./carrito', carrito)
+//router.use('/carrito', carrito)
 
 
 module.exports = router
