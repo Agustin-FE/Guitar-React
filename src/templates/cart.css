@@ -1,4 +1,7 @@
-/* From cssbuttons.io by @satyamchaudharydev */
+.cart{
+    margin: 1rem;
+}
+
 .loading {
     --speed-of-animation: 0.9s;
     --gap: 6px;
@@ -50,4 +53,16 @@
     20% {
      transform: scaleY(1);
     }
+   }
+
+   .finalizarCompra{
+       display: flex;
+       margin: 1rem;
+       justify-content: flex-end;
+   }
+
+   .totalCompra{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
    }

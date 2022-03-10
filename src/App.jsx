@@ -11,6 +11,7 @@ import Jimi from "./components/Jimi";
 import Details from "./commons/Details"
 import Cart from "./components/Cart";
 import Carousel from "./components/Carousel";
+import FormCar from "./components/FormCar";
 
 
 const App = () => {
@@ -23,8 +24,9 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/form_address" element={<FormCar />} />
       </Routes>
 
       <Footer />
