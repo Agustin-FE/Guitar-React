@@ -57,3 +57,5 @@ export const LogIn = () => {
          </form>
       </div> )
  }
+
+ export default LogIn

@@ -74,7 +74,7 @@ const FormCar=()=>{
                type = "text"  
                name = "Telefono" />
           </label>
-          <button className="button is-primary" type="submit" name = "Enviar formulario de envio">
+          <button className="buttonCompra" type="submit" name = "Enviar formulario de envio">
             Enviar
           </button>
       </form>

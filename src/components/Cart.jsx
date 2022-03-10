@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import arrayProduct from "../components/products.json"
 import ListItem from "../commons/ListItem"
+import { useSelector } from "react-redux";
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
-    const [guitars, setGuitar] = useState([]);
+    const guitars = useSelector( state => state.cart )
     
     useEffect(()=>{
         setIsLoading(true);
-        setGuitar(arrayProduct);
         setTimeout(3000);
         setIsLoading(false);
     })

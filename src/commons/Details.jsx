@@ -4,6 +4,8 @@ import axios from "axios";
 import arrayProduct from "../components/products.json"
 
 const Details = () =>{
+    const dispatch = useDispatch()
+    dispatch( setCarrito( "data" ) )
     
    // const {guitarId} = useParams();
     const [guitar, setGuitar] = useState([]);

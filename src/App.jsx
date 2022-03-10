@@ -1,7 +1,7 @@
 import React from "react";
 import "./templates/tiles.css"
 import "./templates/home.css"
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -11,6 +11,8 @@ import Jimi from "./components/Jimi";
 import Details from "./commons/Details"
 import Cart from "./components/Cart";
 import Carousel from "./components/Carousel";
+import SingIn from "./components/SingIn";
+import { LogIn } from "./components/Logueo";
 
 
 const App = () => {
@@ -23,8 +25,11 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/register" element={<SingIn />} />
+        <Route path="*" element={<Navigate to = "/"/>} />
       </Routes>
 
       <Footer />
