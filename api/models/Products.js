@@ -31,6 +31,10 @@ Products.init({
       type: S.STRING,
       allowNull: false,
     },
+    imagen2:{
+        type: S.STRING,
+        allowNull: false,
+      },
     stock:{
         type: S.INTEGER,
         allowNull: false,

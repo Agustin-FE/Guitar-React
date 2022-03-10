@@ -14,7 +14,6 @@ const Home = () => {
     .then( res => res.data )
     .then( data => {
       setGuitarList( data ) 
-      console.log( "Ok: Productos importados", data )
     })
     
   }, [] )
