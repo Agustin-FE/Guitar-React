@@ -3,7 +3,6 @@ import axios from "axios"
 
 import Tiles from "../commons/Tiles"
 import FormCar from "./FormCar"
-import gList from "./guitarList.json"
 
 const Home = () => {
     
@@ -15,7 +14,6 @@ const Home = () => {
     .then( res => res.data )
     .then( data => {
       setGuitarList( data ) 
-      console.log( "Ok: Productos importados", gList )
     })
     
   }, [] )
