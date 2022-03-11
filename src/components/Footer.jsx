@@ -3,15 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer className="footer has-background-dark foot">
-        <div class="content has-text-centered">
-          <p class= "has-text-white">
-            <strong class="has-text-white">GUITAR REACT</strong> by{" "}
-            <a class= "has-text-white">Jeremy Thomas</a>. The source code is
+      <footer className="footer has-background-black is-small" >
+        <div className="content has-text-centered">
+          <p className= "has-text-white">
+            <strong className="has-text-white">Copyright® Guitar React, Inc. All Right Reserved.</strong> By{" "}
+            <p className= "has-text-white">Plataforma 5 BootCamp 2022</p>. The source code is
             licensed {" "}
-            <a class="has-text-white">MIT</a>.
-            All rights reserved © 2022{" "}
-            <a class="has-text-white">
+            <a className="has-text-white">MIT</a>.
+            {" "}
+            <a className="has-text-white">
               CC BY NC SA 4.0
             </a>
           </p>

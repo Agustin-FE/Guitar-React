@@ -31,10 +31,17 @@ const App = () => {
         <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart/form_address" element={<FormCar />} />
+
+        <Route path="/gibson/electric" element={null}/>
+        <Route path="/gibson/acoustic" element={null}/>
+        <Route path="/fender/electric" element={null}/>
+        <Route path="/fender/acoustic" element={null}/>
+        <Route path="/taylor/electric" element={null}/>
+        <Route path="/taylor/acoustic" element={null}/>
+
       </Routes>
-
+      
       <Footer />
-
     </>
   );  
 };
