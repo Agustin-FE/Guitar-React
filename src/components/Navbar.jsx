@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 import SearchBar from "./Searchbar";
 
 const Navbar = () => {
-  let [isSerching, setIsSerching] = useState( false )
+  let [isSerching, setIsSerching] = useState(false);
 
-  useEffect( () => {}, [isSerching] )
+  useEffect(() => {}, [isSerching]);
 
   return (
     <>
-      <nav className="navbar is-black is-fixed-top">
+      <nav className="navbar is-black is-fixed-top is-hoverable">
         <div className="navbar-brand">
           <div className="navbar-item">
             <Link to="/">
-                <h1 className="is-size-3=is-size-3">GUITAR REACT</h1>
+              <strong className="has-text-white is-size-5">GUITAR REACT</strong>
             </Link>
-            
           </div>
           <a
             role="button"
@@ -33,27 +32,45 @@ const Navbar = () => {
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">Gibson</a>
-
+              {/* <a className="navbar-link"><strong>Gibson</strong>®-Electric</a> */}
+              <a className="navbar-link">
+                <strong>Gibson</strong>®-Guitars
+              </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item">Les Paul</a>
-                <a className="navbar-item">SG</a>
-                <a className="navbar-item">ES</a>
-                <a className="navbar-item">Designer</a>
+                <Link to={"/gibson/electric"}><p className="navbar-item">Electric</p></Link>
+                <Link to={"/gibson/acoustic"}><p className="navbar-item">Acoustic</p></Link>
+                {/* <a className="navbar-item">ES</a>
+                <a className="navbar-item">Designer</a> */}
                 <hr className="navbar-divider"></hr>
                 <a href="https://www.gibson.com/en-US/" className="navbar-item">
                   Gibson.com
                 </a>
               </div>
             </div>
+            {/* <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link"><strong>Gibson</strong>®-Acoustic</a>
+              <div className="navbar-dropdown">
+                <a className="navbar-item">Original Collection</a>
+                <a className="navbar-item">Artist Collection</a>
+                <hr className="navbar-divider"></hr>
+                <a href="https://www.gibson.com/en-US/" className="navbar-item">
+                  Gibson.com
+                </a>
+              </div>
+            </div> */}
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">Fender</a>
-
+              {/* <a className="navbar-link"><strong>Fender</strong>®-Electric</a> */}
+              <a className="navbar-link">
+                <strong>Fender</strong>®-Guitars
+              </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item">Stratocaster</a>
+              <Link to={"/fender/electric"}><p className="navbar-item">Electric</p></Link>
+              <Link to={"/fender/acoustic"}><p className="navbar-item">Acosutic</p></Link>
+
+                {/* <a className="navbar-item">Stratocaster</a>
                 <a className="navbar-item">Telecaster</a>
-                <a className="navbar-item">Jazzmaster</a>
+                <a className="navbar-item">Jazzmaster</a> */}
                 <hr className="navbar-divider"></hr>
                 <a
                   href="https://www.fender.com/es/start"
@@ -64,12 +81,29 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">Taylor</a>
-
+            {/* <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link"><strong>Fender</strong>®-Acoustic</a>
               <div className="navbar-dropdown">
-                <a className="navbar-item">About</a>
-                <a className="navbar-item">Jobs</a>
+                <a className="navbar-item">Paramount</a>
+                <a className="navbar-item">Classic Design</a>
+                <hr className="navbar-divider"></hr>
+                <a
+                  href="https://www.fender.com/es/start"
+                  className="navbar-item"
+                >
+                  Fender.com
+                </a>
+              </div>
+            </div> */}
+
+            <div className="navbar-item has-dropdown is-hoverable">
+              {/* <a className="navbar-link"><strong>Taylor</strong>®-Electric</a> */}
+              <a className="navbar-link">
+                <strong>Taylor</strong>®-Guitars
+              </a>
+              <div className="navbar-dropdown">
+              <Link to={"/taylor/electric"}><p className="navbar-item">Electric</p></Link>
+              <Link to={"/taylor/acoustic"}><p className="navbar-item">Acoustic</p></Link>
                 <hr className="navbar-divider"></hr>
                 <a
                   href="https://www.taylorguitars.com/"
@@ -79,25 +113,43 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
+
+            {/* <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
+                <strong>Taylor</strong>®-Acoustic
+              </a>
+              <div className="navbar-dropdown">
+                <a className="navbar-item">100 Series Guitars</a>
+                <a className="navbar-item">American Dream® Series</a>
+                <hr className="navbar-divider"></hr>
+                <a
+                  href="https://www.taylorguitars.com/"
+                  className="navbar-item"
+                >
+                  Taylor.com
+                </a>
+              </div>
+            </div> */}
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
                 <button className="button is-danger">
                   <Link to={"/register"}>
-
-                    <p>Register</p>
+                    <p className="has-text-white">Register</p>
                   </Link>
                 </button>
                 <br />
+                <br />
+                <br />
                 <button className="button is-danger">
                   <Link to={"/login"}>
-                    Login
+                    <p className="has-text-white">Login</p>
                   </Link>
                 </button>
                 <button className="button is-danger">
                   <Link to={"/cart"}>
-                    <strong>
+                    <strong className="has-text-white">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -111,15 +163,17 @@ const Navbar = () => {
                     </strong>
                   </Link>
                 </button>
-                <button className="button is-danger" 
-                  onClick = { () => setIsSerching( !isSerching ) }>
-                      <SearchIcon />
+                <button
+                  className="button is-danger"
+                  onClick={() => setIsSerching(!isSerching)}
+                >
+                  <SearchIcon />
                 </button>
               </div>
             </div>
           </div>
         </div>
-      { isSerching && <SearchBar /> }
+        {isSerching && <SearchBar />}
       </nav>
     </>
   );
