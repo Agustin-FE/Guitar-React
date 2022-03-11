@@ -1,6 +1,10 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setCarrito } from "../store/carrito";
+import ButtonCart from "./ButtonCart";
+
 
 const Details = () =>{
     // const dispatch = useDispatch()
@@ -8,7 +12,10 @@ const Details = () =>{
     
     const {id} = useParams();
     const [guitar, setGuitar] = useState([]);
+    //const [cartUser,setCartUser] = useState([]);
     
+    
+
     useEffect(()=>{
         axios(`http://localhost:3001/api/product/${id}`)
         .then((res) => res.data)
@@ -31,22 +38,19 @@ return (
                 <div className="description-product" >
                     <p class="title is-1 is"> <strong>{guitar.nombre}</strong></p>
                     <p class="title is-2 is"> <strong>u$s {guitar.precio}</strong></p>
-                    <p> <strong> Cantidad disponible: </strong>{guitar.stock}</p>
+                    <p> <strong> Cantidad disponible: </strong> {guitar.stock}</p>
                     <p> <strong> Categoria: </strong>{guitar.categoria}</p>
                     <p> <strong> Marca: </strong> { guitar.marca}  </p>
+                    <p> <strong> Descripción: </strong> { guitar.descripcion}  </p>
                     <br/>
-                    <button class="buttonCompra"> Agregar al carrito </button>
+                    <ButtonCart product={guitar}/>
                 </div> 
             </div>
             <div>
             <p>            </p>
             </div>
     </div>
-     <div className="body-details"> 
-           <p class="title"> <strong> Descripción </strong> </p>
-           <hr/>
-           <p> {guitar.descripcion} </p>
-       </div>
+     
        </>   
 );
 }
