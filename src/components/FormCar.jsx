@@ -55,9 +55,9 @@ const FormCar=()=>{
       <p className = "content" >Ingrese aqui los datos de envio</p>
 
       <form onSubmit={sendForm}>
-               
         <div className="field">
           <input className="input is-primary" onChange = { changeName } 
+
                value = { name } 
                type = "text"  
                placeholder="Nombre" 

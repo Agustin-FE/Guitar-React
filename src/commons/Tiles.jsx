@@ -6,8 +6,8 @@ import { ReactComponent as EpiphoneIcon } from "../essets/epiphone.svg";
 
 const Tiles = ( { producto } ) => {
   return ( 
-    <div className = "mothertile column mb-5">
-      <Link to = "/details" >
+    <div className = "mothertile column">
+      <Link to = {"/guitar/" + producto.id}>
         <div className="tile">
           <div className="tile2 columns">
               {/* <p className = "column" >{ producto.marca }</p>  */}

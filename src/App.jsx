@@ -12,6 +12,7 @@ import Carousel from "./components/Carousel";
 import SingIn from "./components/SingIn";
 import { LogIn } from "./components/Logueo";
 import Search from "./components/Search";
+import FormCar from "./components/FormCar";
 
 
 const App = () => {
@@ -24,11 +25,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/guitar/:id" element={<Details />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<SingIn />} />
         <Route path="*" element={<Navigate to = "/"/>} />
+        <Route path="/guitar/:id" element={<Details />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/form_address" element={<FormCar />} />
       </Routes>
 
       <Footer />
