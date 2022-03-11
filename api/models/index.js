@@ -1,10 +1,10 @@
 const db = require('./db');
-const User = require('./Users');
-const Product = require('./Products')
-const Carrito = require('./Carrito')
-const Order = require('./Orden')
+//const User = require('./Users');
+//const Product = require('./Products')
+//const Carrito = require('./Carrito')
+//const Order = require('./Orden')
 
-//
+/*
 User.hasOne(Carrito)
 //
 Carrito.belongsTo(User)
@@ -20,6 +20,6 @@ Product.belongsToMany(Order,{through: OrderItem})
 Carrito.belongsToMany(Product,{through: CarritoItem})
 //
 Product.belongsToMany(Carrito,{through: CarritoItem})
-
+*/
 
 module.exports = db
