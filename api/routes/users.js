@@ -21,4 +21,11 @@ routerUser.post("/logout", (req, res) => {
     res.sendStatus(200);
 });
 
+routerUser.get("/me", (req, res) => {
+    if (!req.user) {
+      return res.sendStatus(401);
+    }
+    res.send(req.user);
+  });
+
 module.exports = routerUser;
