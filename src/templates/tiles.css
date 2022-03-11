@@ -1,6 +1,7 @@
 .mothertile {
    width: 228px;
    height: 305px;
+   margin-bottom: 30px;
 }
 
 .tile {
@@ -48,4 +49,9 @@
 
 .epiphone-icon {
    width: 128px;
+}
+
+.botoncart {
+   display: flex;
+   flex-wrap: wrap;
 }
