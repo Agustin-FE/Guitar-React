@@ -4,7 +4,7 @@ const user = require('./users')
 const product = require('./products')
 //const carrito = require('./carrito')
 
-router.use('/Users', user)
+router.use('/users', user)
 router.use('/product', product)
 //router.use('/carrito', carrito)
 

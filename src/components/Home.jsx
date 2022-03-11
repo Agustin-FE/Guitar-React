@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 
 import Tiles from "../commons/Tiles"
-import FormCar from "./FormCar"
 
 const Home = () => {
     
   const [guitarList, setGuitarList] = useState([])
+
+  
   
   useEffect( ()=> {
     axios
@@ -19,15 +20,12 @@ const Home = () => {
   }, [] )
   
   return (
-    <div>
-      <div className = "grilla container is-fluid columns" >
+      <div className = "grilla columns is-variable" >
         { guitarList.map( (producto, i) => {
           return (
             <Tiles producto = { producto } key = {i}/> )
         })} 
-      </div> 
-      <FormCar /> 
-    </div>
+      </div>
     )
 }
 

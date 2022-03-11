@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import arrayProduct from "../components/products.json";
 import ListItem from "../commons/ListItem";
 import { Link } from "react-router-dom";
+//import { useSelector } from "react-redux";
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
     const [guitars, setGuitars] = useState([]);
     const [total, setTotal] = useState(0);
+    //const [isLoading,setIsLoading] = useState([true])
+    //const guitars = useSelector( state => state.cart )
     
     useEffect(()=>{
         setIsLoading(true);

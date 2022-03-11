@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Details = () =>{
+    const dispatch = useDispatch()
+    dispatch( setCarrito( "data" ) )
     
     const {id} = useParams();
     const [guitar, setGuitar] = useState([]);

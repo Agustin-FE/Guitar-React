@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const FormCar=()=>{
-  let [name, setName] = useState("")
-  let [surname, setSurname] = useState("")
-  let [address, setAddress] = useState("")
-  let [phone, setPhone] = useState("")
+  let [name, setName] = useState(""),
+      [surname, setSurname] = useState(""),
+      [address, setAddress] = useState(""),
+      [phone, setPhone] = useState(""),
+      [ send, setSend ] = useState( false )
+
+  useEffect ( () => {
+    if ( send ) {
+       // axios
+       // .post("", { name: name,surname: surname, address: address, phone: phone } )
+       // .then (res => res.data)
+       // .then( ( datos ) => {
+       // })
+      console.log({ name: name,surname: surname, address: address, phone: phone })
+      setName( "" )
+      setSurname( "" )
+      setAddress( "" )
+      setPhone( "" )
+    }
+    setSend( false )
+ }, [ send ] )
 
   const changeName = e => {
     e.preventDefault()
@@ -28,40 +45,54 @@ const FormCar=()=>{
 
   const sendForm = e => {
     e.preventDefault()
-    console.log(e.target.value)
+    setSend( true )
   }
   
   return (
-    <div>
+    <div className = "container">
+      <h2 className = "title is-2" >Datos de envio</h2>
+ 
+      <p className = "content" >Ingrese aqui los datos de envio</p>
+
       <form onSubmit={sendForm}>
-        
-        <label>Nombre:  
-          <input onChange = { changeName } 
+        <div className="field">
+          <input className="input is-primary" onChange = { changeName } 
+
                value = { name } 
                type = "text"  
+               placeholder="Nombre" 
                name = "Nombre" />
-          </label>
-        <label>Apellido:  
-          <input onChange = { changeSurname } 
+        </div>
+               
+        <div className="field"> 
+          <input className="input is-primary" onChange = { changeSurname } 
                value = { surname }
                type = "text"  
+               placeholder="Apellido"  
                name = "Apellido" />
-          </label>
-        <label>Direccion:  
-          <input onChange = { changeAddress } 
+        </div>
+               
+        <div className="field">
+          <input className="input is-primary" onChange = { changeAddress } 
                value = { address } 
                type = "text"  
+               placeholder="Direccion"  
                name = "Direccion" />
-          </label>
-        <label>Telefono:  
-          <input onChange = { changePhone } 
+        </div>
+               
+        <div className="field">
+          <input className="input is-primary" onChange = { changePhone } 
                value = { phone } 
                type = "text"  
+               placeholder="Telefono"  
                name = "Telefono" />
-          </label>
-          <button onClick={ ()=>{} }>
+        </div>
+        
+        <div className = "buttons is-right" >
+          <button className="buttonCompra" type="submit" name = "Enviar formulario de envio">
             Enviar
           </button>
+        </div>
       </form>
     </div> )
 };

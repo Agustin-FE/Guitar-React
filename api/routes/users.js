@@ -9,6 +9,7 @@ routerUser.post("/login", passport.authenticate("local"), (req, res) => {
 });
 
 routerUser.post("/register", (req, res) => {
+    console.log("Esto es register",req.body)
     User.create(req.body)
     .then((user)=> {
         res.status(201).send(user);

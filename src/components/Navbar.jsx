@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ReactComponent as SearchIcon } from "../essets/search.svg";
 import { Link } from "react-router-dom";
+import SearchBar from "./Searchbar";
 
 const Navbar = () => {
+  let [isSerching, setIsSerching] = useState( false )
+
+  useEffect( () => {}, [isSerching] )
+
   return (
     <>
-      <nav className="navbar is-black">
+      <nav className="navbar is-black is-fixed-top">
         <div className="navbar-brand">
-          <a className="navbar-item">
-            <h1 className="is-size-3=is-size-3">GUITAR REACT</h1>
-          </a>
+          <div className="navbar-item">
+            <Link to="/">
+                <h1 className="is-size-3=is-size-3">GUITAR REACT</h1>
+            </Link>
+            
+          </div>
           <a
             role="button"
             className="navbar-burger"
@@ -74,15 +83,20 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to={"/register"}>
-                  <a className="button is-danger">Register</a>
-                </Link>
+                <button className="button is-danger">
+                  <Link to={"/register"}>
+
+                    <p>Register</p>
+                  </Link>
+                </button>
                 <br />
-                <Link to={"/login"}>
-                  <a className="button is-danger">Login</a>
-                </Link>
-                <Link to={"/cart"}>
-                  <a className="button is-danger">
+                <button className="button is-danger">
+                  <Link to={"/login"}>
+                    Login
+                  </Link>
+                </button>
+                <button className="button is-danger">
+                  <Link to={"/cart"}>
                     <strong>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -95,12 +109,17 @@ const Navbar = () => {
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                       </svg>
                     </strong>
-                  </a>
-                </Link>
+                  </Link>
+                </button>
+                <button className="button is-danger" 
+                  onClick = { () => setIsSerching( !isSerching ) }>
+                      <SearchIcon />
+                </button>
               </div>
             </div>
           </div>
         </div>
+      { isSerching && <SearchBar /> }
       </nav>
     </>
   );
