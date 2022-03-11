@@ -2,21 +2,20 @@ import { useState, useEffect } from "react";
 import arrayProduct from "../components/products.json";
 import ListItem from "../commons/ListItem";
 import { Link } from "react-router-dom";
-//import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
-    const [guitars, setGuitars] = useState([]);
+    //const [guitars, setGuitars] = useState([]);
     const [total, setTotal] = useState(0);
-    //const [isLoading,setIsLoading] = useState([true])
-    //const guitars = useSelector( state => state.cart )
-    
+    const guitars = useSelector( state => state.cart )
+       //const guitars = useSelector( state => state.cart )
+    console.log(guitars)
     useEffect(()=>{
+        
         setIsLoading(true);
-        setGuitars(arrayProduct);
-        setTimeout(3000);
         setIsLoading(false);
-        setTotal( guitars.map((guitar)=> parseInt(guitar.precio)))
+        
     })
 
     if(isLoading)
