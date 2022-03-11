@@ -12,7 +12,10 @@ export const LogIn = () => {
          axios
          .post("http://localhost:3001/api/users/login", { email: email, password: password } )
          .then ( res => res.data )
-         .then( ( datos ) => {
+         .then( datos => {
+
+            setEmail( "" )
+            setPassword( "" )
             console.log("secion iniciada", datos)
          })
       }
@@ -35,25 +38,31 @@ export const LogIn = () => {
    }
 
    return (
-      <div>
-         <h2>Iniciar sesion</h2>
+      <div className = "container">
+         <h2 className = "title is-2" >Iniciar sesion</h2>
 
          <form onSubmit={ sendData } >
-            <label>E-mail:  <input className="input is-primary" onChange = { emailHandler } 
+            
+            <div className="field">
+               <input className="input is-primary" onChange = { emailHandler } 
                   value = { email } 
                   type = "text"  
+                  placeholder="Email"  
                   name = "email" />
-            </label>
-         
-            <label>Password:  <input className="input is-primary" onChange = { passwordHandler } 
+            </div>
+                  
+            <div className="field"><input className="input is-primary" onChange = { passwordHandler } 
                   value = { password } 
-                  type = "text"  
+                  type = "password"  
+                  placeholder="Password"  
                   name = "password" />
-            </label>
-            
-            <button className="button is-primary" type="submit" name = "Iniciar sesion">
-               Iniciar sesion
-            </button>
+            </div>
+
+            <div className = "buttons is-right" >
+               <button className="buttonCompra" type="submit" name = "Iniciar sesion">
+                  Iniciar sesion
+               </button>
+            </div>
          </form>
       </div> )
  }

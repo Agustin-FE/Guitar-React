@@ -14,6 +14,11 @@ const FormCar=()=>{
        // .then (res => res.data)
        // .then( ( datos ) => {
        // })
+      console.log({ name: name,surname: surname, address: address, phone: phone })
+      setName( "" )
+      setSurname( "" )
+      setAddress( "" )
+      setPhone( "" )
     }
     setSend( false )
  }, [ send ] )
@@ -41,42 +46,53 @@ const FormCar=()=>{
   const sendForm = e => {
     e.preventDefault()
     setSend( true )
-    console.log({ name: name,surname: surname, address: address, phone: phone })
   }
   
   return (
-    <div>
-      <h2>Datos de envio</h2>
+    <div className = "container">
+      <h2 className = "title is-2" >Datos de envio</h2>
  
-      <p>Ingrese aqui los datos de envio</p>
+      <p className = "content" >Ingrese aqui los datos de envio</p>
+
       <form onSubmit={sendForm}>
-        <label>Nombre:  
+               
+        <div className="field">
           <input className="input is-primary" onChange = { changeName } 
                value = { name } 
                type = "text"  
+               placeholder="Nombre" 
                name = "Nombre" />
-          </label>
-        <label>Apellido:  
+        </div>
+               
+        <div className="field"> 
           <input className="input is-primary" onChange = { changeSurname } 
                value = { surname }
                type = "text"  
+               placeholder="Apellido"  
                name = "Apellido" />
-          </label>
-        <label>Direccion:  
+        </div>
+               
+        <div className="field">
           <input className="input is-primary" onChange = { changeAddress } 
                value = { address } 
                type = "text"  
+               placeholder="Direccion"  
                name = "Direccion" />
-          </label>
-        <label>Telefono:  
+        </div>
+               
+        <div className="field">
           <input className="input is-primary" onChange = { changePhone } 
                value = { phone } 
                type = "text"  
+               placeholder="Telefono"  
                name = "Telefono" />
-          </label>
+        </div>
+        
+        <div className = "buttons is-right" >
           <button className="buttonCompra" type="submit" name = "Enviar formulario de envio">
             Enviar
           </button>
+        </div>
       </form>
     </div> )
 };

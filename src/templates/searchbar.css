@@ -1,0 +1,7 @@
+.fixed {
+   position: fixed;
+   top: 54px;
+   position: absolute;
+  left: 0;
+  right: 0;
+}

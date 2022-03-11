@@ -1,6 +1,4 @@
 import React from "react";
-import "./templates/tiles.css"
-import "./templates/home.css"
 import { Routes, Route, Navigate } from "react-router";
 
 import Footer from "./components/Footer";
@@ -13,18 +11,19 @@ import Cart from "./components/Cart";
 import Carousel from "./components/Carousel";
 import SingIn from "./components/SingIn";
 import { LogIn } from "./components/Logueo";
+import Search from "./components/Search";
 
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <SearchBar />
       <Jimi />
       {/* <Carousel /> */}
       
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<LogIn />} />

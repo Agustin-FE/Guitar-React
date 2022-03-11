@@ -13,9 +13,14 @@ export const SingIn = () => {
          axios
          .post("http://localhost:3001/api/users/register", { name: name,surname: surname,email: email, password: password } )
          .then (res => res.data)
-         .then( ( datos ) => {
+         .then( datos => {
+
+            setName( "" )
+            setSurname( "" )
+            setEmail( "" )
+            setPassword( "" )
             console.log("Estas registrado", datos)
-         })
+         } )
       }
       setSign( false )
    }, [ sign ] )
@@ -43,54 +48,52 @@ export const SingIn = () => {
    const passwordHandler = e => {
       e.preventDefault()
       setPassword( e.target.value )
-      console.log({ name: name,surname: surname,email: email, password: password })
    }
 
    return (
-      <div>
-         <h2>Registro</h2>
+      <div className = "container">
+         <h2 className = "title is-2" >Registro</h2>
       
-         <p>Llene el siguente formulario para registrarse</p>
+         <p className = "content" >Llene el siguente formulario para registrarse</p>
          
          <form onSubmit={ signSubmit } >
-            <label>
-               Nombre:  <input className="input is-primary" onChange = { nameHandler } 
+            <div className="field">
+               <input className="input is-primary" onChange = { nameHandler } 
                   value = { name } 
                   type = "text"  
+                  placeholder="Nombre"  
                   name = "Nombre" />
-            </label>
-            <label>
-               Apellido:  <input className="input is-primary" onChange = { surnameHandler } 
+            </div>
+            
+            <div className="field">
+               <input className="input is-primary" onChange = { surnameHandler } 
                   value = { surname } 
                   type = "text"  
+                  placeholder="Apellido"  
                   name = "Apellido" />
-            </label>
+            </div>
+
             <div className="field">
-               <p className="control has-icons-left has-icons-right">
-                  <input className="input is-primary" onChange = { emailHandler } 
-                     value = { email } 
-                     type="email" 
-                     placeholder="Email"  
-                     name = "email" />
-                  <span className="icon is-small is-left">
-                     <i className="fas fa-envelope"></i>
-                  </span>
-                  <span className="icon is-small is-right">
-                     <i className="fas fa-check"></i>
-                  </span>
-               </p>
+               <input className="input is-primary" onChange = { emailHandler } 
+                  value = { email } 
+                  type="email" 
+                  placeholder="Email"  
+                  name = "email" />
             </div>
          
-            <label>
-               Password:  <input className="input is-primary" onChange = { passwordHandler } 
+            <div className="field">
+               <input className="input is-primary" onChange = { passwordHandler } 
                   value = { password } 
-                  type = "text"  
+                  type = "password"  
+                  placeholder="Password"  
                   name = "password" />
-            </label>
-            
-            <button className="button is-primary" type="submit" name = "Registrarse">
-               Registrarse
-            </button>
+            </div>
+
+            <div className = "buttons is-right" >
+               <button className="buttonCompra" type="submit" name = "Registrarse">
+                  Registrarse
+               </button>
+            </div>
          </form>
          
       </div> )

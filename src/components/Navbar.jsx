@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ReactComponent as SearchIcon } from "../essets/search.svg";
 import { Link } from "react-router-dom";
+import SearchBar from "./Searchbar";
 
 const Navbar = () => {
+  let [isSerching, setIsSerching] = useState( false )
+
+  useEffect( () => {}, [isSerching] )
+
   return (
     <>
-      <nav className="navbar is-black">
+      <nav className="navbar is-black is-fixed-top">
         <div className="navbar-brand">
           <div className="navbar-item">
             <Link to="/">
@@ -105,10 +111,15 @@ const Navbar = () => {
                     </strong>
                   </Link>
                 </button>
+                <button className="button is-danger" 
+                  onClick = { () => setIsSerching( !isSerching ) }>
+                      <SearchIcon />
+                </button>
               </div>
             </div>
           </div>
         </div>
+      { isSerching && <SearchBar /> }
       </nav>
     </>
   );
