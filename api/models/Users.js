@@ -35,11 +35,6 @@ User.init({
     type: S.STRING,
     allowNull: false,
   }, 
-  carrito:{
-      type: S.ARRAY(S.JSON),
-      defaultValue: [],
-      allowNull: false,
-  },
   salt: {
       type: S.STRING
   }
