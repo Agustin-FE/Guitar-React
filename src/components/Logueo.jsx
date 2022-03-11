@@ -16,7 +16,7 @@ export const LogIn = () => {
 
             setEmail( "" )
             setPassword( "" )
-            console.log("secion iniciada", datos)
+            console.log("sesion iniciada", datos)
          })
       }
       setSend( false )
