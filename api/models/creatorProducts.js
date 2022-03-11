@@ -1,6 +1,19 @@
 const Products = require('./Products.js')
+const productos = require('../guitarList.json')
 
-Products.bulkCreate([
+Products.bulkCreate(
+   /*for (let i = 0; i < productos.length; i++) 
+   {
+      marca: productos[i].marca
+       nombre: productos.nombre
+       descripcion: productos[i].descripcion
+       categoria: productos[i].categorias
+       imagen: productos[i].
+       imagen2:
+       precio: 
+       stock:
+   }*/
+   [
     {
        marca: "Fender", 
        nombre:"Jim Adkins JA-90 Telecaster Thinline Crimson Red Transparent", 

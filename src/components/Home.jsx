@@ -18,8 +18,8 @@ const Home = () => {
     })
     
   }, [] )
-  
-  return (
+
+ return (
       <div className = "grilla columns is-variable" >
         { guitarList.map( (producto, i) => {
           return (

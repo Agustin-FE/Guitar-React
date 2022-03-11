@@ -20,23 +20,13 @@ routerProduct.get("/:id", (req,res) => {
         console.log(err)
       })
 })
-
-routerProduct.get("/categories/:categoria", (req,res) => {
-    const {categoria} = req.params
-    Product.findAll( {where:{ categoria }})
+routerProduct.get("/:marca/:categoria", (req,res) => {
+    const marca= req.params.marca
+    const categoria= req.params.categoria
+    Product.findAll({ where: {marca, categoria}})
     .then(guitar => {
         res.status(201).send(guitar)
     })
 })
-
-routerProduct.get("/brands/:brand", (req,res) => {
-    const {brand} = req.params
-    Product.findOne( {where:{ brand }})
-    .then(guitar => {
-        res.status(201).send(guitar)
-    })
-})
-
-
 
 module.exports = routerProduct;
