@@ -1,9 +1,6 @@
-.zoomImg:hover {
-    transform: scale(2);
-  }
   .heard-details{
     display: flex;
-    
+    padding: 2rem;
   }
   .buttonCompra {
     --color: #00A97F;
@@ -59,17 +56,19 @@
    }
    
    .description-product{
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 30px;
     background: #e0e0e0;
-    box-shadow: 15px 15px 30px #bebebe,
-                -15px -15px 30px #ffffff;
+    box-shadow: 10px 10px 25px #bebebe,
+                -10px -10px 25px #ffffff;
+    flex-direction: column;
+    
    }
    
    .body-details{
-     padding: 2rem;
+     padding: 1rem;
    }
 
    .description-adiconal{
-    padding: 2rem;
+    padding: 1rem;
    }

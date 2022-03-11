@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Tiles = ( { producto } ) => {
   return ( 
     <div className = "mothertile column">
-      <Link to = "/details" >
+      <Link to = {"/guitar/" + producto.id}>
         <div className="tile">
           <div className="tile2 columns">
             <p className = "column" >{ producto.marca }</p> 

@@ -34,6 +34,7 @@ const FormCar=()=>{
   return (
     <div>
       <form onSubmit={sendForm}>
+        
         <label>Nombre:  
           <input onChange = { changeName } 
                value = { name } 
