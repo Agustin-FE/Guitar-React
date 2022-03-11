@@ -3,15 +3,7 @@ import { createAction, createReducer } from "@reduxjs/toolkit"
 export const setCarrito = createAction( "CARRITO" )
 
 export const carrito = createReducer( [], { 
-   [ setCarrito ]: ( state, action ) => {
-      let newCart = []
-      if(state.cart) {
-         newCart = state.cart
-      }
-     //const newCart = state.cart
-     newCart.push(action.payload);
-      return newCart;
-   }
+   [ setCarrito ]: ( state, action ) =>  [...state, action.payload]
 } )
 /*export const carrito = createReducer( [], { 
    [ setCarrito ]: ( state, action ) => {

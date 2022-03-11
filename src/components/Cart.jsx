@@ -10,12 +10,12 @@ const Cart = () =>{
     const [total, setTotal] = useState(0);
     const guitars = useSelector( state => state.cart )
        //const guitars = useSelector( state => state.cart )
-    console.log(guitars)
-    useEffect(()=>{
+   
+       useEffect(()=>{
         
         setIsLoading(true);
         setIsLoading(false);
-        
+
     })
 
     if(isLoading)
@@ -31,7 +31,9 @@ const Cart = () =>{
 
     return (
         <div className="cart">
-                {guitars.map((guitar)=>( <ListItem {... guitar} />))} 
+                {guitars.map((guitar,i)=>{ 
+                       
+                        return ( <ListItem {... guitar.product} key={i} /> ) })} 
 
                 <hr/>
                 <div className="totalCompra">

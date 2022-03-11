@@ -39,6 +39,7 @@ return (
                     <p> <strong> Cantidad disponible: </strong> {guitar.stock}</p>
                     <p> <strong> Categoria: </strong>{guitar.categoria}</p>
                     <p> <strong> Marca: </strong> { guitar.marca}  </p>
+                    <p> <strong> Descripción: </strong> { guitar.descripcion}  </p>
                     <br/>
                     <ButtonCart product={guitar}/>
                 </div> 
@@ -47,11 +48,7 @@ return (
             <p>            </p>
             </div>
     </div>
-     <div className="body-details"> 
-           <p class="title"> <strong> Descripción </strong> </p>
-           <hr/>
-           <p> {guitar.descripcion} </p>
-       </div>
+     
        </>   
 );
 }
