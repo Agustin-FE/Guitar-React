@@ -7,6 +7,8 @@ import ButtonCart from "./ButtonCart";
 
 
 const Details = () =>{
+    // const dispatch = useDispatch()
+    // dispatch( setCarrito( "data" ) )
     
     const {id} = useParams();
     const [guitar, setGuitar] = useState([]);

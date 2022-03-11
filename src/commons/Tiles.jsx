@@ -18,7 +18,7 @@ const Tiles = ( { producto } ) => {
                   : <EpiphoneIcon className = "epiphone-icon"/> }
                 
             <img className = "guitarimg column" src = {producto.imagen}/>
-            <p className = "column">U$S { producto.precio }</p>
+              <p>U$S { producto.precio }</p>
           </div>
         </div>
       </Link>

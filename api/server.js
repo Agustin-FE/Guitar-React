@@ -8,6 +8,7 @@ const sessions = require("express-session");
 const db = require("./models/index");
 const morgan = require("morgan");
 const volleyball = require('volleyball');
+const User = require('./models/Users');
 
 app.use(volleyball)
 app.use(express.json())
