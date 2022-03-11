@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer class="footer has-background-dark">
+      <footer className="footer has-background-dark foot">
         <div class="content has-text-centered">
           <p class= "has-text-white">
             <strong class="has-text-white">GUITAR REACT</strong> by{" "}
