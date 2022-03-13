@@ -34,7 +34,11 @@ User.init({
   password:{
     type: S.STRING,
     allowNull: false,
-  }, 
+  },
+  admin:{
+    type: S.BOOLEAN,
+    defaultValue: false
+  },
   salt: {
       type: S.STRING
   }
