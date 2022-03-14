@@ -1,34 +1,41 @@
 const express = require('express')
 const routerCarrito = express.Router()
-const Carrito = require('../models/Carrito')
-const Products = require("../models/Products")
+const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../models/index");
 
 
-routerCarrito.get("/carritoShow", (req, res) => {
-    Carrito.findAll()
+
+routerCarrito.get("/carritoShow", (req, res) => { 
+    const {userId } = req.body
+    CarritoItem.findAll({where: { userId }})
         .then((items) => res.send(items))
+}) 
+
+routerCarrito.post("/carritoAdd", (req, res) => {
+    let {userId, productId, cantidad} = req.body
+
+    CarritoItem.create({ 
+        userId: userId,
+        productId: productId,
+        cantidad: cantidad
+    })
+    .then((body) => {
+        res.send("objeto creado")
+    })
 })
 
-routerCarrito.get("/carritoAdd/:id", (req, res) => {
-    const { id } = req.params
-    Products.findOne({ where: { id } })
-        .then(product => {
-            let idItem = product.id
-            Carrito.create(idItem)
-                .then((idItem) => res.send(idItem))
-        })
+routerCarrito.delete("/carritoDelete", (req, res) => {
+    let {userId, productId, cantidad} = req.body
+
+    CarritoItem.findOne({where:{ 
+        userId: userId,
+        productId: productId,
+        cantidad: cantidad
+    }})
+    .then((body) => {
+        CarritoItem.destroy(body.id)
+        .then((data) => res.send(data))
+    })
 })
 
-routerCarrito.get("/carritoDelete/:id", (req, res) => {
-    const { id } = req.params
-    Products.findOne({ where: { id } })
-        .then(id => {
-            Carrito.destroy(idItem)
-                .then((idItem) => (idItem))
-        })
-        .then((id) => {
-            res.send(id)
-        })
-})
 
 module.exports = routerCarrito

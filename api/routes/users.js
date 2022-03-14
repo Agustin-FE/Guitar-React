@@ -1,6 +1,6 @@
 const express = require('express')
 const routerUser = express.Router()
-const User = require('../models/Users')
+const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../models/index");
 const passport = require('passport');
 
 
@@ -9,10 +9,14 @@ routerUser.post("/login", passport.authenticate("local"), (req, res) => {
 });
 
 routerUser.post("/register", (req, res) => {
-    console.log("Esto es register",req.body)
-    User.create(req.body)
+    const user = req.body
+    User.create(user)
     .then((user)=> {
         res.status(201).send(user);
+        /*Carrito.create({ userId: user.dataValues.id})
+        .then((param) => {
+            res.send(param)
+        })*/
     })
 });
 
@@ -38,6 +42,7 @@ routerUser.post("/me", (req,res) => {
         password: password
     }})
     .then((data) => res.sendStatus(200))
+    .catch(err => console.log(err))
 })
 
 routerUser.get("/showUser", (req,res) => {
@@ -48,6 +53,7 @@ routerUser.get("/showUser", (req,res) => {
         .then(users => {
             res.status(201).send(users)
         })
+        .catch(err => console.log(err))
     }
 })
 
@@ -75,6 +81,7 @@ routerUser.delete('/:id', function (req, res, next) {
             admin : true,
         }})
         .then((data) => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 })
 
