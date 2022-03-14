@@ -1,9 +1,12 @@
 import { createAction, createReducer } from "@reduxjs/toolkit"
 
-export const setCarrito = createAction( "CARRITO" )
+export const setCarrito = createAction( "ADDCARRITO" )
+export const removeCarrito = createAction( "REMOVECARRITO" )
 
 export const carrito = createReducer( [], { 
-   [ setCarrito ]: ( state, action ) =>  [...state, action.payload]
+   [ setCarrito ]: ( state, action ) => [...state, action.payload],
+   [ removeCarrito ]: ( state, action ) => 
+         state.filter( producto => producto.id !== action.payload )
 } )
 /*export const carrito = createReducer( [], { 
    [ setCarrito ]: ( state, action ) => {

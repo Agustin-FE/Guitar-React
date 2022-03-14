@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as SearchIcon } from "../essets/search.svg";
 import { Link } from "react-router-dom";
 import SearchBar from "./Searchbar";
+import LogInCard from "./UserCard/LogInCard";
+import LogedCard from "./UserCard/LogedCard";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   let [isSerching, setIsSerching] = useState(false);
+  let [logInClick, setLogInClick] = useState(false);
 
-  useEffect(() => {}, [isSerching]);
+  const isLoged = useSelector( state => state.user )
+
+  window.addEventListener('click', e => {
+    let buttonLog = document.getElementById('clickLog')
+    let tarjeta = document.getElementById('clickCard')
+    if ( (buttonLog && !buttonLog.contains(e.target)) && (tarjeta && !tarjeta.contains(e.target)) ) {
+      setLogInClick(false)
+    }
+  })
 
   return (
     <>
@@ -133,19 +145,21 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
+                {isSerching && <SearchBar />}
               <div className="buttons">
-                <button className="button is-danger">
-                  <Link to={"/register"}>
-                    <p className="has-text-white">Register</p>
-                  </Link>
+                
+                <button
+                  className="button is-danger"
+                  onClick={() => setIsSerching(!isSerching)}
+                >
+                  <SearchIcon />
                 </button>
                 <br />
                 <br />
                 <br />
-                <button className="button is-danger">
-                  <Link to={"/login"}>
+                <button id="clickLog" className="button is-danger" 
+                  onClick={() => setLogInClick(!logInClick)}>
                     <p className="has-text-white">Login</p>
-                  </Link>
                 </button>
                 <button className="button is-danger">
                   <Link to={"/cart"}>
@@ -163,18 +177,15 @@ const Navbar = () => {
                     </strong>
                   </Link>
                 </button>
-                <button
-                  className="button is-danger"
-                  onClick={() => setIsSerching(!isSerching)}
-                >
-                  <SearchIcon />
-                </button>
               </div>
             </div>
           </div>
         </div>
-        {isSerching && <SearchBar />}
       </nav>
+      
+
+        { logInClick && ( isLoged ? <LogedCard /> : <LogInCard /> ) }
+      
     </>
   );
 };

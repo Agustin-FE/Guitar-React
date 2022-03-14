@@ -1,0 +1,7 @@
+.tarjeta {
+   position: fixed;
+   width: 320px;
+   top: 90px;
+   right: 20px;
+   z-index: 10;
+}
