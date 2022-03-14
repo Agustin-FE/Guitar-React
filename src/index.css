@@ -9,12 +9,17 @@
 @import "./templates/searchbar.css";
 @import "./templates/tiles.css";
 @import "./templates/home.css";
+   @import "./templates/dropdown.css"; 
+
 
 body {
-   background-color: #EBF5FB;
+   background-color: #d2d2d2a7;
 }
 
 .foot {
    margin-top: 20px;
    height: 30px;
 }
+
+
+
