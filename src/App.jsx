@@ -10,24 +10,23 @@ import Details from "./commons/Details"
 import Cart from "./components/Cart";
 import Carousel from "./components/Carousel";
 import SingIn from "./components/SingIn";
-import { LogIn } from "./components/Logueo";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
+import { useDispatch } from "react-redux";
+import { setCarrito } from "./store/carrito";
 
 
 const App = () => {
+
   return (
     <>
       <Navbar />
-      <Jimi />
       {/* <Carousel /> */}
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<SingIn />} />
-        <Route path="*" element={<Navigate to = "/"/>} />
         <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart/form_address" element={<FormCar />} />
@@ -38,6 +37,8 @@ const App = () => {
         <Route path="/fender/acoustic" element={null}/>
         <Route path="/taylor/electric" element={null}/>
         <Route path="/taylor/acoustic" element={null}/>
+        
+        <Route path="*" element={<Navigate to = "/"/>} />
 
       </Routes>
       

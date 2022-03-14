@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+import { removeCarrito } from "../store/carrito";
+import ButtonCart from "./ButtonCart";
 
-const ListItem = ({ id,nombre, precio, categorias, imagen }) =>{
-    
+const ListItem = ({product}) =>{
+    const { id,nombre, precio, categorias, imagen } = product
     return (<>
             <Link to={"/guitar/" + id}>
             <div className="list-item-cart">
@@ -16,6 +19,7 @@ const ListItem = ({ id,nombre, precio, categorias, imagen }) =>{
                 </div>
             </div>
             </Link>
+            <ButtonCart product = {product}/>
         </>
     )
 };

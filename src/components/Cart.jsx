@@ -20,7 +20,7 @@ const Cart = () =>{
 
     if(isLoading)
     return (
-            <div class="loading">
+            <div className="loading">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,8 +32,8 @@ const Cart = () =>{
     return (
         <div className="cart">
                 {guitars.map((guitar,i)=>{ 
-                       
-                        return ( <ListItem {... guitar.product} key={i} /> ) })} 
+                        console.log("cart =>",guitar)
+                        return ( <ListItem product = {guitar} key={i} /> ) })} 
 
                 <hr/>
                 <div className="totalCompra">
@@ -42,7 +42,7 @@ const Cart = () =>{
                 <div className="finalizarCompra">
                     <div>
                     <Link to="/cart/form_address">
-                     <button class="buttonCompra"> Finalizar Compra </button>
+                     <button className="buttonCompra"> Finalizar Compra </button>
                     </Link>  
                     </div>
                 </div>
