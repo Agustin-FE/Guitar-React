@@ -1,34 +1,37 @@
-// import React from "react";
+// import React from 'react';
+// import bulmaCarousel from 'bulma-carousel';
 
-// const Carousel = () => {
-//   return (
-//       <>
-// 		<section class="hero is-medium has-carousel">
-// 			<div id="carousel-demo" class="hero-carousel">
-// 				<div class="item-1">
-// 				    <img src="https://images8.alphacoders.com/636/thumb-1920-636629.jpg" alt="">
-// 				</div>
-// 				<div class="item-2">
-//                     <img src="https://images8.alphacoders.com/636/thumb-1920-636629.jpg" alt="">
-// 				</div>
-// 				<div class="item-3">
-// 				    <img src="https://images8.alphacoders.com/636/thumb-1920-636629.jpg" alt=""> 
-// 				</div>
-// 			</div>
-// 			<div class="hero-head"></div>
-// 			<div class="hero-body"></div>
-// 			<div class="hero-foot"></div>
-// 		</section>
+// class Pictures extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         var carousels = bulmaCarousel.attach('.carousel', {
+//             slidesToScroll: 1,
+//             slidesToShow: 3
+//         });
 
-// 		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-// 		<script>
-// 			bulmaCarousel.attach('#carousel-demo', {
-// 				slidesToScroll: 1,
-// 				slidesToShow: 4
-// 			});
-// 		</script>
-//       </>
-//   )
-// };
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <div class='carousel carousel-animated carousel-animate-slide'>
+//                     <div class='carousel-container'>
+//                         <div class='carousel-item has-background is-active'>
+//                             <img class="is-background" src="" alt="" width="640" height="310" />
+//                             <div class="title">Merry Christmas</div>
+//                         </div>
+//                         <div class='carousel-item has-background'>
+//                             <img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" width="640" height="310" />
+//                             <div class="title">Original Gift: Offer a song with <a href="https://lasongbox.com" target="_blank">La Song Box</a></div>
+//                         </div>
+//                         <div class='carousel-item has-background'>
+//                             <img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" width="640" height="310" />
+//                             <div class="title">Sushi time</div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
 
-// export default Carousel;
+// export default Pictures
