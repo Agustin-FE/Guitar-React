@@ -29,119 +29,140 @@ const Navbar = () => {
               <strong className="has-text-white is-size-5">GUITAR REACT</strong>
             </Link>
           </div>
-          <a
-            role="button"
-            className="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
         </div>
+
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
             <div className="navbar-item has-dropdown is-hoverable">
-              {/* <a className="navbar-link"><strong>Gibson</strong>®-Electric</a> */}
-              <a className="navbar-link">
-                <strong>Gibson</strong>®-Guitars
-              </a>
+              <a className="navbar-link"><strong>Gibson</strong>®-Guitars</a>
               <div className="navbar-dropdown">
-                <Link to={"/gibson/electric"}><p className="navbar-item">Electric</p></Link>
-                <Link to={"/gibson/acoustic"}><p className="navbar-item">Acoustic</p></Link>
-                {/* <a className="navbar-item">ES</a>
-                <a className="navbar-item">Designer</a> */}
+
+                {/* <Link to={"/gibson/electric"}>
+                  <a className="navbar-item">Electric</a>
+                </Link> */}
+
+                <div className="nested dropdown">
+                    <a className="navbar-item">
+                      <span className="icon-text">
+                        <span>Electrics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">Les Paul</a>
+                        <a className="dropdown-item">SG</a>
+                        <a className="dropdown-item">ES</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="nested dropdown">
+                    <a className="navbar-item">
+                      <span className="icon-text ">
+                        <span>Acoustics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">Original Collection</a>
+                        <a className="dropdown-item">Artist Collection</a>
+                      </div>
+                    </div>
+                  </div>
                 <hr className="navbar-divider"></hr>
-                <a href="https://www.gibson.com/en-US/" className="navbar-item">
-                  Gibson.com
-                </a>
+                <a href="https://www.gibson.com/en-US/" className="navbar-item">Gibson.com</a>
               </div>
             </div>
-            {/* <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link"><strong>Gibson</strong>®-Acoustic</a>
-              <div className="navbar-dropdown">
-                <a className="navbar-item">Original Collection</a>
-                <a className="navbar-item">Artist Collection</a>
-                <hr className="navbar-divider"></hr>
-                <a href="https://www.gibson.com/en-US/" className="navbar-item">
-                  Gibson.com
-                </a>
-              </div>
-            </div> */}
 
+         
             <div className="navbar-item has-dropdown is-hoverable">
-              {/* <a className="navbar-link"><strong>Fender</strong>®-Electric</a> */}
-              <a className="navbar-link">
-                <strong>Fender</strong>®-Guitars
-              </a>
+              <a className="navbar-link"><strong>Fender</strong>®-Guitars</a>
               <div className="navbar-dropdown">
-              <Link to={"/fender/electric"}><p className="navbar-item">Electric</p></Link>
-              <Link to={"/fender/acoustic"}><p className="navbar-item">Acosutic</p></Link>
-
-                {/* <a className="navbar-item">Stratocaster</a>
-                <a className="navbar-item">Telecaster</a>
-                <a className="navbar-item">Jazzmaster</a> */}
+              <div className="nested dropdown">
+                    <a className="navbar-item">
+                      <span className="icon-text ">
+                        <span>Electrics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">Stratocaster</a>
+                        <a className="dropdown-item">Telecaster</a>
+                        <a className="dropdown-item">JazzMaster</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="nested dropdown">
+                    <a className="navbar-item">
+                      <span className="icon-text ">
+                        <span>Acoustics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">Paramount</a>
+                        <a className="dropdown-item">Classic Design</a>
+                      </div>
+                    </div>
+                  </div>
                 <hr className="navbar-divider"></hr>
                 <a
                   href="https://www.fender.com/es/start"
-                  className="navbar-item"
-                >
-                  Fender.com
+                  className="navbar-item">Fender.com
                 </a>
               </div>
             </div>
-
-            {/* <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link"><strong>Fender</strong>®-Acoustic</a>
-              <div className="navbar-dropdown">
-                <a className="navbar-item">Paramount</a>
-                <a className="navbar-item">Classic Design</a>
-                <hr className="navbar-divider"></hr>
-                <a
-                  href="https://www.fender.com/es/start"
-                  className="navbar-item"
-                >
-                  Fender.com
-                </a>
-              </div>
-            </div> */}
-
+           
             <div className="navbar-item has-dropdown is-hoverable">
-              {/* <a className="navbar-link"><strong>Taylor</strong>®-Electric</a> */}
-              <a className="navbar-link">
-                <strong>Taylor</strong>®-Guitars
-              </a>
+              <a className="navbar-link"><strong>Taylor</strong>®-Guitars</a>
               <div className="navbar-dropdown">
-              <Link to={"/taylor/electric"}><p className="navbar-item">Electric</p></Link>
-              <Link to={"/taylor/acoustic"}><p className="navbar-item">Acoustic</p></Link>
+              <div class="nested dropdown">
+                    <a className="navbar-item">
+                      <span className="icon-text ">
+                        <span>Electrics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">T3</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="nested dropdown">
+                    <a className="navbar-item">
+                      <span className ="icon-text ">
+                        <span>Acoustics</span>
+                        <span className="icon">
+                          <i className="fas fa-chevron-right"></i>
+                        </span>
+                      </span>
+                    </a>
+                    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div className="dropdown-content">
+                        <a className="dropdown-item">The Taylor Line</a>
+                        <a className="dropdown-item">American Dream®</a>
+                      </div>
+                    </div>
+                  </div>
                 <hr className="navbar-divider"></hr>
-                <a
-                  href="https://www.taylorguitars.com/"
-                  className="navbar-item"
-                >
-                  Taylor.com
-                </a>
+                <a href="https://www.taylorguitars.com/" className="navbar-item">Taylor.com</a>
               </div>
             </div>
-
-            {/* <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                <strong>Taylor</strong>®-Acoustic
-              </a>
-              <div className="navbar-dropdown">
-                <a className="navbar-item">100 Series Guitars</a>
-                <a className="navbar-item">American Dream® Series</a>
-                <hr className="navbar-divider"></hr>
-                <a
-                  href="https://www.taylorguitars.com/"
-                  className="navbar-item"
-                >
-                  Taylor.com
-                </a>
-              </div>
-            </div> */}
+    
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
