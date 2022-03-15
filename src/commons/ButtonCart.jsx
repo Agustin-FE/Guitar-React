@@ -29,9 +29,10 @@ const ButtonCart = ({product}) => {
   return (
     <>
       <input className = "input is-primary"
-        type = "number" 
+        required type = "number" 
+        min="1" max="8"
         value = {cantidad} 
-        onChange = {changeHandler}/>
+        onChange = {changeHandler}  />
       <button className="buttonCompra" onClick={ () => cartHandler(cantidad) }>Cambiar carrito </button>
     </>
     
