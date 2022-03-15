@@ -24,6 +24,7 @@ export const LogInForm = () => {
         setPassword( "" )
         dispatch( setUser( datos ) )
         console.log("Ha iniciado sesion: ", datos.email)
+        
         setLoading( false )
       } )
     }
