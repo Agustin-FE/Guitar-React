@@ -28,7 +28,7 @@ const ButtonCart = ({product}) => {
 
   return (
     <>
-      <input className = "input is-primary"
+      <input className = "input is-primary chico"
         type = "number" 
         value = {cantidad} 
         onChange = {changeHandler}/>
