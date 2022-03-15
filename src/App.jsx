@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router";
+=======
+import React from "react";
+import { Routes, Route} from "react-router";
+>>>>>>> 02953feb1e95ce5ec7a22483c969ebad776e7bac
 
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -31,20 +36,17 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search />} />   
         <Route path="/register" element={<SingIn />} />
         <Route path="/guitar/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart/form_address" element={<FormCar />} />
 
-        <Route path="/gibson/electric" element={null}/>
-        <Route path="/gibson/acoustic" element={null}/>
-        <Route path="/fender/electric" element={null}/>
-        <Route path="/fender/acoustic" element={null}/>
-        <Route path="/taylor/electric" element={null}/>
-        <Route path="/taylor/acoustic" element={null}/>
-        
-        <Route path="*" element={<Navigate to = "/"/>} />
+        <Route path="/productos/:marca" element={<Jimi />}/>
+        <Route path="/productos/:marca/:categoria" element={<Jimi />}/>
+        <Route path="/productos/:marca/:categoria/:serie" element={<Jimi />}/>
+
+        {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
       </Routes>
       

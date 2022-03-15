@@ -5,10 +5,9 @@ const cors = require("cors")
 const passport = require("passport")
 const localStrategy = require("passport-local").Strategy;
 const sessions = require("express-session");
-const db = require("./models/index");
+const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("./models/index");
 const morgan = require("morgan");
 const volleyball = require('volleyball');
-const User = require('./models/Users');
 
 app.use(volleyball)
 app.use(express.json())
