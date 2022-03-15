@@ -16,7 +16,7 @@ const Cart = () =>{
         setIsLoading(true);
         setIsLoading(false);
 
-    })
+    },[])
 
     if(isLoading)
     return (
@@ -31,8 +31,7 @@ const Cart = () =>{
 
     return (
         <div className="cart">
-                {guitars.map((guitar,i)=>{ 
-                        console.log("cart =>",guitar)
+                {guitars.map((guitar, i)=>{
                         return ( <ListItem product = {guitar} key={i} /> ) })} 
 
                 <hr/>

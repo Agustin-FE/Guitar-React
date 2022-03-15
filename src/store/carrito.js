@@ -1,11 +1,24 @@
 import { createAction, createReducer } from "@reduxjs/toolkit"
 
-export const setCarrito = createAction( "ADDCARRITO" )
-export const removeCarrito = createAction( "REMOVECARRITO" )
+export const setInitCart = createAction( "INITCART" )
+export const setCart = createAction( "ADDCART" )
+export const setNumber = createAction( "SETCOUNT" )
+export const removeCart = createAction( "REMOVECART" )
 
 export const carrito = createReducer( [], { 
-   [ setCarrito ]: ( state, action ) => [...state, action.payload],
-   [ removeCarrito ]: ( state, action ) => 
+   [ setInitCart ]: ( state, action ) => action.payload,
+   [ setCart ]: ( state, action ) => {
+         localStorage.setItem( "cart", JSON.stringify( [...state, action.payload] ) )
+         return [...state, action.payload]
+   },
+   [ setNumber ]: ( state, action ) => {
+      const { id, cantidad } = action.payload
+      const index = state.findIndex( elemento => elemento.id === id)
+      state[index].cantidad = cantidad
+      localStorage.setItem( "cart", JSON.stringify( state ) )
+      return state
+   },
+   [ removeCart ]: ( state, action ) => 
          state.filter( producto => producto.id !== action.payload )
 } )
 /*export const carrito = createReducer( [], { 
@@ -25,3 +38,6 @@ export const carrito = createReducer( [], {
 
 //Pedir valor
 //useSelector( state => state.Algo )
+
+
+// [{productId, cantidad},{productId, cantidad},{productId, cantidad}]

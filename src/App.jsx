@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router";
 
 import Footer from "./components/Footer";
@@ -13,11 +13,17 @@ import SingIn from "./components/SingIn";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
 import { useDispatch } from "react-redux";
-import { setCarrito } from "./store/carrito";
+import { setInitCart } from "./store/carrito";
 
 
 const App = () => {
 
+  const dispatch = useDispatch()
+
+  if ( localStorage.getItem( "cart" ) )
+    dispatch( setInitCart( JSON.parse( localStorage.getItem( "cart" ) ) ) )
+
+  
   return (
     <>
       <Navbar />
