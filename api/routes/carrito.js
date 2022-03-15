@@ -36,6 +36,16 @@ routerCarrito.delete("/carritoDelete", (req, res) => {
         .then((data) => res.send(data))
     })
 })
+routerCarrito.put("/carritoUpdate", (req, res) => {
+    let {cantidad} = req.body
+
+    CarritoItem.update({ 
+        cantidad: cantidad
+    })
+    .then((body) => {
+        res.send("objeto actualizado")
+    })
+})
 
 
 module.exports = routerCarrito
