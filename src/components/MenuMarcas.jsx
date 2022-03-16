@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MenuMarcas = ({ serie, serie2 }) => {
+const MenuMarcas = () => {
   return (
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
@@ -22,20 +22,9 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Les Paul</a>
+                <a className="dropdown-item">Les Paul</a>
                 <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a> */}
-                {serie.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/gibson/electrics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">ES</a>
               </div>
             </div>
           </div>
@@ -52,19 +41,8 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a> */}
-                {serie2.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/gibson/acoustics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">Original Collection</a>
+                <a className="dropdown-item">Artist Collection</a>
               </div>
             </div>
           </div>
@@ -74,7 +52,6 @@ const MenuMarcas = ({ serie, serie2 }) => {
           </a>
         </div>
       </div>
-
 
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link">
@@ -94,20 +71,9 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Les Paul</a>
+                <a className="dropdown-item">Les Paul</a>
                 <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a> */}
-                {serie.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/fender/electrics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">ES</a>
               </div>
             </div>
           </div>
@@ -124,19 +90,8 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a> */}
-                {serie2.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/fender/acoustics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">Original Collection</a>
+                <a className="dropdown-item">Artist Collection</a>
               </div>
             </div>
           </div>
@@ -147,16 +102,15 @@ const MenuMarcas = ({ serie, serie2 }) => {
         </div>
       </div>
 
-
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link">
-          <strong>Taylor</strong>®-Guitars
+          <strong>Grestch</strong>®-Guitars
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text">
-                <Link to={"/taylor/electrics"} className="icon-text">
+                <Link to={"/gretsch/electrics"} className="icon-text">
                   <span>Electrics</span>
                 </Link>
                 <span className="icon">
@@ -166,27 +120,16 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Les Paul</a>
+                <a className="dropdown-item">Les Paul</a>
                 <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a> */}
-                {serie.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/taylor/electrics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">ES</a>
               </div>
             </div>
           </div>
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text ">
-                <Link to={"/taylor/acoustics"} className="icon-text">
+                <Link to={"/gretsch/acoustics"} className="icon-text">
                   <span>Acoustics</span>
                 </Link>
                 <span className="icon">
@@ -196,29 +139,17 @@ const MenuMarcas = ({ serie, serie2 }) => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                {/* <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a> */}
-                {serie2.map((elemento, i) => {
-                  return (
-                    <Link
-                      to={`/taylor/acoustics/${elemento}`}
-                      key={i}
-                      className="dropdown-item"
-                    >
-                      {elemento}
-                    </Link>
-                  );
-                })}
+                <a className="dropdown-item">Original Collection</a>
+                <a className="dropdown-item">Artist Collection</a>
               </div>
             </div>
           </div>
           <hr className="navbar-divider"></hr>
-          <a href="https://www.taylorguitars.com/" className="navbar-item">
-            Taylor.com
+          <a href="https://www.gretschguitars.com/" className="navbar-item">
+            Gretsch.com
           </a>
         </div>
       </div>
-
     </div>
   );
 };

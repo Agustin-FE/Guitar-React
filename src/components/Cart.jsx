@@ -35,12 +35,13 @@ const Cart = () =>{
                 <div className="itemsContainer">
                 <div className="formularioEnvio">
                 {guitars.map((guitar, i)=>{
-                        return ( <ListItem product = {guitar} key={i} /> ) })} 
+                return ( <ListItem productId = {guitar.productId} key={i} /> ) })} 
                 </div>
                 <div className="formularioEnvio">
                     <FormCar />
                 </div>
                 </div>
+
 
                 <hr/>
                 <div className="totalCompra">
