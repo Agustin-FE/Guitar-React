@@ -46,7 +46,6 @@ const ListItem = ( { productId } ) =>{
         </div>
        
       </Link>
-     
       <div className="carritoStyle">
       <ButtonCart productId= {productId}/>
       <button class="tooltip">
@@ -73,3 +72,5 @@ const ListItem = ( { productId } ) =>{
 };
 
 export default ListItem;
+
+
