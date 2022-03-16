@@ -17,6 +17,8 @@
     font-family: inherit;
     color: var(--color);
     z-index: 1;
+    margin-right: 20px;
+    height: 38px;
    }
    
    .buttonCompra::before, .buttonCompra::after {
@@ -71,4 +73,26 @@
 
    .description-adiconal{
     padding: 1rem;
+   }
+
+   .carritoStyle{
+     display: flex;
+   }
+
+   .comentarios{
+     text-align: center;
+     border: solid grey 5px;
+     width: 50%;
+
+     justify-content: center;
+     align-items: center;
+   }
+
+   .linea{
+     border-bottom: 4px solid white;
+   }
+
+   .letras{
+     margin-left: 15px;
+     color: #151817
    }

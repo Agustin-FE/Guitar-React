@@ -77,4 +77,4 @@ routerAdmin.post("/changeproduct", (req,res) => {
         })
 })
 
-module.exports = router;
+module.exports = routerAdmin;

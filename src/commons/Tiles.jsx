@@ -21,6 +21,7 @@ const Tiles = ( { producto } ) => {
               <img className = "guitarimg column" src = {producto.imagen}/>
               
               <p>U$S { producto.precio }</p>
+              
 
           </div>
         </div>
