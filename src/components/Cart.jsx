@@ -46,14 +46,16 @@ const Cart = () =>{
                 <div className="totalCompra">
                     <p> <strong> Total: u$s </strong> {total}</p>
                 </div>
+                <Link to={"/encamino"}>
                 <div className="finalizarCompra">
                     <div>
 
-
+                       
                      <button className="buttonCompra"> Finalizar Compra </button>
-
+                     
                     </div>
                 </div>
+                </Link> 
                    
 
         </div>

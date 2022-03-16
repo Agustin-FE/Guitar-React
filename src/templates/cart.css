@@ -10,6 +10,11 @@
      margin-right:10px
 }
 
+.maschico{
+    width: 48px;
+    height: 25px;
+}
+
 .itemsContainer{
     display: flex;
 }
