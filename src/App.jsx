@@ -29,7 +29,7 @@ const App = () => {
   
   return (
     <>
-      
+      <Navbar />
       <SlideShow/>
       <Routes>
         <Route path="/" element={<Home />} />
