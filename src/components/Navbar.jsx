@@ -32,9 +32,8 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-
         <div id="navbarBasicExample" className="navbar-menu">
-          <MenuMarcas serie={["Les Paul", "SG", "ES"]} serie2={["Original Collection", "Artist Collection"]}/>
+          <MenuMarcas />
           <div className="navbar-end">
             <div className="navbar-item">
                 {isSerching && <SearchBar />}
