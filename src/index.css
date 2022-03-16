@@ -12,8 +12,7 @@
 @import "./templates/card.css";
 @import "./templates/dropdown.css"; 
 @import "./templates/slideShow.css"; 
-
-
+@import "./templates/navbar.css"; 
 
 body {
    background-color: #d2d2d2a7;
