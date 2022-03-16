@@ -45,44 +45,5 @@ routerUser.post("/me", (req,res) => {
     .catch(err => console.log(err))
 })
 
-routerUser.get("/showUser", (req,res) => {
-    const {admin} = req.body
-    if(admin === true)
-    {
-        User.findAll()
-        .then(users => {
-            res.status(201).send(users)
-        })
-        .catch(err => console.log(err))
-    }
-})
-
-routerUser.delete('/:id', function (req, res, next) {
-    const {id} = req.params
-    const {admin} = req.body
-    if(admin === true)
-    {
-        User.destroy({
-            where: {
-              id: id
-            }
-          })
-          .then((data) => res.sendStatus(202))
-          .catch(res.sendStatus(204))
-    }
-  })
-
-  routerUser.post("/me", (req,res) => {
-    const {admin} = req.body
-    if(admin === true)
-    {
-        User.update(req.body,
-        { where:{
-            admin : true,
-        }})
-        .then((data) => res.sendStatus(200))
-        .catch(err => console.log(err))
-    }
-})
 
 module.exports = routerUser;
