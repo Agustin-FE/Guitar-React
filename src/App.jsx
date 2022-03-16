@@ -16,6 +16,7 @@ import Search from "./components/Search";
 import FormCar from "./components/FormCar";
 import { useDispatch } from "react-redux";
 import { setInitCart } from "./store/carrito";
+import SlideShow from "./components/SlideShow";
 
 
 const App = () => {
@@ -28,9 +29,8 @@ const App = () => {
   
   return (
     <>
-      <Navbar />
-      {/* <Carousel /> */}
       
+      <SlideShow/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />   
