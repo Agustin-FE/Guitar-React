@@ -49,7 +49,7 @@ const FormCar=()=>{
   }
   
   return (
-    <div className = "container">
+    <>
       <h2 className = "title is-2" >Datos de envio</h2>
  
       <p className = "content" >Ingrese aqui los datos de envio</p>
@@ -94,6 +94,6 @@ const FormCar=()=>{
           </button>
         </div>
       </form>
-    </div> )
+    </> )
 };
 export default FormCar

@@ -3,6 +3,7 @@ import arrayProduct from "../components/products.json";
 import ListItem from "../commons/ListItem";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import FormCar from "./FormCar";
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
@@ -30,9 +31,16 @@ const Cart = () =>{
         );
 
     return (
-        <div className="cart">
+        <div className="cart grow-content">
+                <div className="itemsContainer">
+                <div className="formularioEnvio">
                 {guitars.map((guitar, i)=>{
                         return ( <ListItem product = {guitar} key={i} /> ) })} 
+                </div>
+                <div className="formularioEnvio">
+                    <FormCar />
+                </div>
+                </div>
 
                 <hr/>
                 <div className="totalCompra">
@@ -40,13 +48,15 @@ const Cart = () =>{
                 </div>
                 <div className="finalizarCompra">
                     <div>
-                    <Link to="/cart/form_address">
+
+
                      <button className="buttonCompra"> Finalizar Compra </button>
-                    </Link>  
+
                     </div>
                 </div>
                    
-        </div> 
+
+        </div>
     );
 }
 
