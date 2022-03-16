@@ -43,7 +43,7 @@ return (
                     <p> <strong> Marca: </strong> { guitar.marca}  </p>
                     <p> <strong> Descripción: </strong> { guitar.descripcion}  </p>
                     <br/>
-                    <ButtonCart product={guitar}/>
+                    <ButtonCart productId={guitar.id}/>
                 </div> 
             </div>
             <div>

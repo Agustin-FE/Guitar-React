@@ -4,13 +4,13 @@ import {Link} from "react-router-dom";
 import { removeCarrito } from "../store/carrito";
 import ButtonCart from "./ButtonCart";
 
-const ListItem = ( { product} ) =>{
+const ListItem = ( { productId } ) =>{
 
     let [guitar, setGuitar] = useState("")
 
     useEffect(()=>{
         
-        axios(`http://localhost:3001/api/product/${product.id}`)
+        axios(`http://localhost:3001/api/product/${productId}`)
         .then((res) => res.data)
         .then((data)=> setGuitar(data) )
     },[])
@@ -30,7 +30,7 @@ const ListItem = ( { product} ) =>{
                 </div>
             </div>
             </Link>
-            <ButtonCart product= {product}/>
+            <ButtonCart productId= {productId}/>
         </>
     )
 };

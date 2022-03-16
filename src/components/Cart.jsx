@@ -32,7 +32,7 @@ const Cart = () =>{
     return (
         <div className="cart">
                 {guitars.map((guitar, i)=>{
-                        return ( <ListItem product = {guitar} key={i} /> ) })} 
+                        return ( <ListItem productId = {guitar.productId} key={i} /> ) })} 
 
                 <hr/>
                 <div className="totalCompra">

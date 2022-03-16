@@ -15,15 +15,13 @@ import SingIn from "./components/SingIn";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
 import { useDispatch } from "react-redux";
-import { setInitCart } from "./store/carrito";
+import { initCart } from "./store/carrito";
 
 
 const App = () => {
 
   const dispatch = useDispatch()
-
-  if ( localStorage.getItem( "cart" ) )
-    dispatch( setInitCart( JSON.parse( localStorage.getItem( "cart" ) ) ) )
+  dispatch( initCart( { userId: 1 } ) )
 
   
   return (

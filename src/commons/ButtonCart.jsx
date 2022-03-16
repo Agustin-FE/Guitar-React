@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import { removeCart, setCart, setNumber } from "../store/carrito";
+import { addCart, postCart, removeCart, setCart, setNumber, updateCart } from "../store/carrito";
 
-const ButtonCart = ({product}) => {
-    const isInCart = useSelector( state => state.cart ).find(element => element.id === product.id )
+const ButtonCart = ({ productId }) => {
+    const isInCart = useSelector( state => state.cart ).find(element => element.productId === productId )
 
-    const [cantidad, setCantidad] = useState(product.cantidad || 1)
+    const [cantidad, setCantidad] = useState( isInCart ? isInCart.cantidad : 0 )
 
     const dispatch = useDispatch();
 
@@ -13,11 +13,11 @@ const ButtonCart = ({product}) => {
       console.log(cantidad)
       if (cantidad !== 0) {
         isInCart
-        ? dispatch( setNumber( {id: product.id, cantidad: cantidad } ) )
-        : dispatch( setCart( {id: product.id, cantidad: cantidad } ) )
+        ? dispatch( updateCart( {productId: productId, cantidad: cantidad, userId: 1 } ) )
+        : dispatch( addCart( {productId: productId, cantidad: cantidad, userId: 1 } ) )
       }
       else {
-        removeCart( product.id )
+        dispatch( removeCart( {productId: productId, userId: 1 }))
       }
     }
 
@@ -30,10 +30,10 @@ const ButtonCart = ({product}) => {
     <>
       <input className = "input is-primary"
         required type = "number" 
-        min="1" max="8"
-        value = {cantidad} 
+        min = {0} max = {8} 
+        value = { isInCart ? isInCart.cantidad : cantidad } 
         onChange = {changeHandler}  />
-      <button className="buttonCompra" onClick={ () => cartHandler(cantidad) }>Cambiar carrito </button>
+      <button className="buttonCompra" onClick={ cartHandler }>Cambiar carrito </button>
     </>
     
   );
