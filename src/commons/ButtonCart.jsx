@@ -30,8 +30,9 @@ const ButtonCart = ({product}) => {
     <>
       <input className = "input is-primary chico"
         type = "number" 
+        min="1" max="8"
         value = {cantidad} 
-        onChange = {changeHandler}/>
+        onChange = {changeHandler}  />
       <button className="buttonCompra" onClick={ () => cartHandler(cantidad) }>Cambiar carrito </button>
     </>
     
