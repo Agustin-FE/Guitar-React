@@ -16,6 +16,9 @@ import Search from "./components/Search";
 import FormCar from "./components/FormCar";
 import { useDispatch } from "react-redux";
 import { initCart } from "./store/carrito";
+import SlideShow from "./components/SlideShow";
+import EnCamino from "./components/EnCamino";
+
 
 
 const App = () => {
@@ -27,8 +30,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      {/* <Carousel /> */}
-      
+      <SlideShow/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />   
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/productos/:marca" element={<Jimi />}/>
         <Route path="/productos/:marca/:categoria" element={<Jimi />}/>
         <Route path="/productos/:marca/:categoria/:serie" element={<Jimi />}/>
+
+        <Route path="/encamino" element={<EnCamino />} />
 
         {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 

@@ -7,6 +7,7 @@ import LogedCard from "./UserCard/LogedCard";
 import { useSelector } from "react-redux";
 import MenuMarcas from "./MenuMarcas"
 
+
 const Navbar = () => {
   let [isSerching, setIsSerching] = useState(false);
   let [logInClick, setLogInClick] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar is-black is-fixed-top is-hoverable">
+      <nav className="navbar is-black sticky">
         <div className="navbar-brand">
           <div className="navbar-item">
             <Link to="/">
@@ -31,9 +32,8 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-
         <div id="navbarBasicExample" className="navbar-menu">
-          <MenuMarcas serie={["Les Paul", "SG", "ES"]} serie2={["Original Collection", "Artist Collection"]}/>
+          <MenuMarcas />
           <div className="navbar-end">
             <div className="navbar-item">
                 {isSerching && <SearchBar />}

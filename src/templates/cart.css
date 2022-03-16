@@ -1,5 +1,26 @@
 .cart{
-    margin: 1rem;
+    margin: 1rem; 
+}
+
+.grow-content {
+    min-height: calc(100vh - 224px);
+}
+
+.chico{width:50px;
+     margin-right:10px
+}
+
+.maschico{
+    width: 48px;
+    height: 25px;
+}
+
+.itemsContainer{
+    display: flex;
+}
+
+.formularioEnvio{
+    width: 50%;
 }
 
 .loading {

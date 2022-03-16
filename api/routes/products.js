@@ -29,61 +29,14 @@ routerProduct.get("/:marca/:categoria", (req,res) => {
     })
 })
 
-routerProduct.post("/addProduct", (req,res) => {
-    const {nombre, precio,descripcion, categoria, marca, imagen, imagen2, stock} = req.body
-    /*const {admin} = req.body
-    if(admin === true)
-    {*/
-        Product.create({
-            nombre : nombre,
-            precio: precio,
-            descripcion: descripcion,
-            categoria: categoria,
-            marca: marca,
-            imagen: imagen,
-            imagen2: imagen2,
-            stock: stock
-        })
-        .then(product => {
-            res.status(201).send(product)
-        })
-    //}
+routerProduct.get("/:nombre", (req,res) => {
+    const nombre = req.params
+    Product.findAll({ where: nombre})
+    .then(guitar => {
+        res.status(201).send(guitar)
+    })
 })
 
-routerProduct.delete("/deleteProduct", (req,res) => {
-    const {id} = req.body
-    /*const {admin} = req.body
-    if(admin === true)
-    {*/
-        Product.destroy({
-            where: {
-                id: id
-              }
-            })
-        .then((data) => res.sendStatus(202))
-        .catch(res.sendStatus(204))
-    //}
-})
 
-routerProduct.post("/changeProduct", (req,res) => {
-    const {nombre, precio,descripcion, categoria, marca, imagen, imagen2, stock} = req.body
-    /*const {admin} = req.body
-    if(admin === true)
-    {*/
-        Product.update({
-            nombre : nombre,
-            precio: precio,
-            descripcion: descripcion,
-            categoria: categoria,
-            marca: marca,
-            imagen: imagen,
-            imagen2: imagen2,
-            stock: stock
-        })
-        .then(product => {
-            res.status(201).send(product)
-        })
-    //}
-})
 
 module.exports = routerProduct;

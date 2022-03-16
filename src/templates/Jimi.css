@@ -1,5 +1,7 @@
+/*url("https://images8.alphacoders.com/636/636629.jpg")*/
+
 #Jimi {
-  background: rgb(0, 0, 0) url("https://images8.alphacoders.com/636/636629.jpg");
+  background: rgb(0, 0, 0) ;
   background-position: right;
   background-size: auto 100%;
   background-repeat: no-repeat;

@@ -5,13 +5,14 @@
 @import "./templates/details.css";
 @import "./templates/cart.css";
 @import "./templates/listItem.css";
-@import "./templates/Jimi.css";
+/*@import "./templates/Jimi.css";*/
 @import "./templates/searchbar.css";
 @import "./templates/tiles.css";
 @import "./templates/home.css";
 @import "./templates/card.css";
 @import "./templates/dropdown.css"; 
-
+@import "./templates/slideShow.css"; 
+@import "./templates/navbar.css"; 
 
 body {
    background-color: #d2d2d2a7;

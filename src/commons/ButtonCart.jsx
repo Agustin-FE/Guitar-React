@@ -28,10 +28,11 @@ const ButtonCart = ({ productId }) => {
 
   return (
     <>
-      <input className = "input is-primary"
-        required type = "number" 
+      <input className = "input is-primary chico"
+        type = "number" 
         min = {0} max = {8} 
         value = { isInCart ? isInCart.cantidad : cantidad } 
+
         onChange = {changeHandler}  />
       <button className="buttonCompra" onClick={ cartHandler }>Cambiar carrito </button>
     </>
