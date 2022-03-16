@@ -69,13 +69,6 @@ const Details = () => {
         </div>
       </div>
 
-      {/* <div className="comentarios">
-    <p><strong>Usuario:</strong></p>
-    <p><strong>Calificación: </strong></p>
-    <p><strong>Comentarios: <textarea class="textarea is-primary" placeholder="Primary textarea"></textarea></strong></p>
-    
-
-    </div> */}
 
       <article class="message">
         <div class="message-header">
