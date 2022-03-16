@@ -4,47 +4,53 @@ const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../
 
 
 
-routerCarrito.get("/carritoShow", (req, res) => { 
-    const {userId } = req.body
-    CarritoItem.findAll({where: { userId }})
-        .then((items) => res.send(items))
+routerCarrito.get("/show/:userId", (req, res) => { 
+    const { userId } = req.params
+    CarritoItem
+    .findAll({where: { userId: userId }})
+    .then( items => {
+        const cart = items.map( item => {
+            const data = item.dataValues
+            return {
+                cantidad: data.cantidad, 
+                userId: data.userId,
+                productId: data.productId
+                }
+        } )
+        res.send( cart )
+    })
 }) 
 
-routerCarrito.post("/carritoAdd", (req, res) => {
-    let {userId, productId, cantidad} = req.body
-
+routerCarrito.post("/add", (req, res) => {
+    let { userId, productId, cantidad } = req.body
     CarritoItem.create({ 
         userId: userId,
         productId: productId,
         cantidad: cantidad
     })
-    .then((body) => {
-        res.send("objeto creado")
-    })
+    .then( ( { dataValues } ) => 
+        res.send( {
+            userId: dataValues.userId,
+            productId: dataValues.productId,
+            cantidad: dataValues.cantidad
+        } ) )
 })
 
-routerCarrito.delete("/carritoDelete", (req, res) => {
-    let {userId, productId, cantidad} = req.body
-
-    CarritoItem.findOne({where:{ 
-        userId: userId,
-        productId: productId,
-        cantidad: cantidad
-    }})
-    .then((body) => {
-        CarritoItem.destroy(body.id)
-        .then((data) => res.send(data))
-    })
+routerCarrito.delete("/delete/:userId/:productId", (req, res) => {
+    const { userId, productId } = req.params
+    CarritoItem
+    .destroy({ where: { productId: productId, userId: userId } })
+    .then( () =>
+        res.send( { productId: productId } ) )
 })
-routerCarrito.put("/carritoUpdate", (req, res) => {
-    let {cantidad} = req.body
 
-    CarritoItem.update({ 
-        cantidad: cantidad
-    })
-    .then((body) => {
-        res.send("objeto actualizado")
-    })
+routerCarrito.put("/update/:userId/:productId", (req, res) => {
+    let { cantidad, productId, userId } = req.body
+    CarritoItem.update(
+        {cantidad: cantidad}, 
+        {where: { productId: productId, userId: userId } } )
+    .then( () =>
+        res.send( req.body ) )
 })
 
 

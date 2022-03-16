@@ -4,15 +4,20 @@ import { Link } from "react-router-dom";
 import { removeCarrito } from "../store/carrito";
 import ButtonCart from "./ButtonCart";
 
-const ListItem = ({ product }) => {
+
+const ListItem = ( { productId } ) =>{
   let [guitar, setGuitar] = useState("");
 
-  useEffect(() => {
-    axios(`http://localhost:3001/api/product/${product.id}`)
-      .then((res) => res.data)
-      .then((data) => setGuitar(data));
-  }, []);
 
+
+    useEffect(()=>{
+        
+        axios(`http://localhost:3001/api/product/${productId}`)
+        .then((res) => res.data)
+        .then((data)=> setGuitar(data) )
+    },[])
+  
+  
   return (
     <div className="linea">
       <Link to={"/guitar/" + guitar.id}>
@@ -43,7 +48,7 @@ const ListItem = ({ product }) => {
       </Link>
      
       <div className="carritoStyle">
-      <ButtonCart product={product} />
+      <ButtonCart productId= {productId}/>
       <button class="tooltip">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
