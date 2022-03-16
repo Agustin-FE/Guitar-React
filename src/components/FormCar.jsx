@@ -88,11 +88,6 @@ const FormCar=()=>{
                name = "Telefono" />
         </div>
         
-        <div className = "buttons is-right" >
-          <button className="buttonCompra" type="submit" name = "Enviar formulario de envio">
-            Enviar
-          </button>
-        </div>
       </form>
     </> )
 };
