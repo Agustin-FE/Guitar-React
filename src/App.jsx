@@ -17,7 +17,6 @@ import { setInitCart } from "./store/carrito";
 import UserAdmin from "./components/Admin/AdminUserListBorrar";
 import DetailsUserAdmin from "./components/Admin/AdminUserBorrar";
 import SlideShow from "./components/SlideShow";
-import Jimi from "./components/Jimi";
 import EnCamino from "./components/EnCamino";
 
 const App = () => {
@@ -27,10 +26,8 @@ const App = () => {
 
   
   return (
-    <>
+    <div className="has-background-grey-dark">
       <Navbar />
-      {/*<SlideShow/>*/}
-      {/* <Jimi /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />   
@@ -44,18 +41,15 @@ const App = () => {
         <Route path="/productos/:marca/:categoria/:serie" element={null}/>
 
         <Route path="/encamino" element={<EnCamino />} />
-
-
         <Route path="/admin/user/delete" element={<UserAdmin />}/>
         <Route path="/admin/user/delete/:userId" element={<DetailsUserAdmin/>}/>
 
         {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
-
       </Routes>
       
       <Footer />
-    </>
+    </div>
   );  
 };
 

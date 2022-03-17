@@ -4,11 +4,10 @@
 
 /* Botones para reutilizar en la página*/ 
 @import "./templates/buttons.css";
-
 @import "./templates/details.css";
 @import "./templates/cart.css";
 @import "./templates/listItem.css";
-@import "./templates/Jimi.css";
+@import "./templates/text.css";
 @import "./templates/searchbar.css";
 @import "./templates/tiles.css";
 @import "./templates/home.css";
