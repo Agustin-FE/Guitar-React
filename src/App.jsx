@@ -16,8 +16,7 @@ import Cart from "./components/Cart";
 import SingIn from "./components/SingIn";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
-import SlideShow from "./components/SlideShow";
-import Jimi from "./components/Jimi";
+
 import EnCamino from "./components/EnCamino";
 
 
@@ -28,12 +27,8 @@ const App = () => {
 
   
   return (
-    <>
+    <div className="has-background-grey-dark">
       <Navbar />
-
-      <SlideShow/>
-      {/* <Jimi /> */}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />   
@@ -48,12 +43,12 @@ const App = () => {
 
         <Route path="/encamino" element={<EnCamino />} />
 
-        <Route path="*" element={<Navigate to = "/"/>} />
+        {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
       </Routes>
       
       <Footer />
-    </>
+    </div>
   );  
 };
 

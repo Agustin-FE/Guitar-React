@@ -5,15 +5,15 @@ const MenuMarcas = () => {
   return (
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link">
-          <strong>Gibson</strong>®-Guitars
+        <a className="navbar-link has-background-black-ter">
+         <Link to={"/gibson"}><strong className="has-text-white" >Gibson</strong><p className="has-text-white">®-Guitars</p></Link>
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text">
                 <Link to={"/gibson/electrics"} className="icon-text">
-                  <span>Electrics</span>
+                  <span >Electrics</span>
                 </Link>
                 <span className="icon">
                   <i className="fas fa-chevron-right"></i>
@@ -54,8 +54,8 @@ const MenuMarcas = () => {
       </div>
 
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link">
-          <strong>Fender</strong>®-Guitars
+        <a className="navbar-link has-background-black-ter">
+          <Link to={"/fender"}><strong className="has-text-white">Fender</strong><p className="has-text-white">®-Guitars</p></Link>
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
@@ -103,12 +103,12 @@ const MenuMarcas = () => {
       </div>
 
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link">
-          <strong>Grestch</strong>®-Guitars
+        <a className="navbar-link has-background-black-ter">
+       <strong className="has-text-white">Grestch</strong><p className="has-text-white">®-Guitars</p> 
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
-            <a className="navbar-item">
+            <a className="navbar-item ">
               <span className="icon-text">
                 <Link to={"/gretsch/electrics"} className="icon-text">
                   <span>Electrics</span>

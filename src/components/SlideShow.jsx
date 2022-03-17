@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import Jimi from "../components/Jimi";
+
 
 const SlideShow = () =>{
     const slideShow = useRef(null);
@@ -9,16 +9,15 @@ const SlideShow = () =>{
         intervaloSlideShow.current = setInterval(()=>{
             moverDerecha();
         },5000);
-
-        slideShow.current.addEventListener('mouseenter',()=>{
-            clearInterval(intervaloSlideShow.current);
-        })
-        //Volver a mover el Calesita
-        slideShow.current.addEventListener('mouseleave',()=>{
-            intervaloSlideShow.current = setInterval(()=>{
-                moverDerecha();
-            },10000);
-        })
+        // slideShow.current.addEventListener('mouseenter',()=>{
+        //     clearInterval(intervaloSlideShow.current);
+        // })
+        // //Volver a mover el Calesita
+        // slideShow.current.addEventListener('mouseleave',()=>{
+        //     intervaloSlideShow.current = setInterval(()=>{
+        //         moverDerecha();
+        //     },10000);
+        // })
     },[])
 
     const moverDerecha = ()=>{
@@ -66,7 +65,7 @@ const SlideShow = () =>{
            
         }
     }
-
+    
     return (
         <div className="ContenedorSlicePrincipal">
             <div className="ContenedorSlideShow" ref={slideShow}>
@@ -100,8 +99,12 @@ const SlideShow = () =>{
                             <Jimi />
                         </div> */}
                     </div>
-
-                  
+                    <div className="Slide">
+                        <img src="https://images.alphacoders.com/308/thumb-1920-308783.jpg" />
+                        {/* <div className="TextoSlide">
+                            <Jimi />
+                        </div> */}
+                    </div>
                     
             </div>
                 {/* <div className="ControlesSlice" >
