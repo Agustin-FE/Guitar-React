@@ -1,6 +1,6 @@
 import React from "react"
 
-import Grilla from "./Gtilla"
+import Grilla from "../commons/Gtilla"
 
 
 const Home = () => {

@@ -3,7 +3,7 @@ const routerProduct = express.Router()
 const Product = require('../models/Products')
 
 
-routerProduct.get("/guitar", (req,res) => {
+routerProduct.get("/", (req,res) => {
     Product.findAll()
     .then(guitar => {
         res.status(201).send(guitar)

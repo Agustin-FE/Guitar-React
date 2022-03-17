@@ -29,16 +29,16 @@ const MenuMarcas = () => {
             </div>
           </div>
           <div className="nested dropdown">
-            <a className="navbar-item">
+            <div className="navbar-item">
               <span className="icon-text ">
-                <Link to={"/gibson/acoustics"} className="icon-text">
+                <Link to={"/gibson/acoustica"} className="icon-text">
                   <span>Acoustics</span>
                 </Link>
                 <span className="icon">
                   <i className="fas fa-chevron-right"></i>
                 </span>
               </span>
-            </a>
+            </div>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
               <Link to={"/gibson/acoustics/originalcollections"}><a className="dropdown-item">Original Collection</a></Link>

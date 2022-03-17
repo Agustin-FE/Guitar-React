@@ -48,7 +48,7 @@ const App = () => {
 
         <Route path="/encamino" element={<EnCamino />} />
 
-        <Route path="*" element={<Navigate to = "/"/>} />
+        {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
       </Routes>
       
