@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import Jimi from "../components/Jimi";
+
 
 const SlideShow = () =>{
     const slideShow = useRef(null);
@@ -9,42 +9,44 @@ const SlideShow = () =>{
         intervaloSlideShow.current = setInterval(()=>{
             moverDerecha();
         },5000);
-
-        slideShow.current.addEventListener('mouseenter',()=>{
-            clearInterval(intervaloSlideShow.current);
-        })
-        //Volver a mover el Calesita
-        slideShow.current.addEventListener('mouseleave',()=>{
-            intervaloSlideShow.current = setInterval(()=>{
-                moverDerecha();
-            },10000);
-        })
+      
+        // slideShow.current.addEventListener('mouseenter',()=>{
+        //     clearInterval(intervaloSlideShow.current);
+        // })
+        // //Volver a mover el Calesita
+        // slideShow.current.addEventListener('mouseleave',()=>{
+        //     intervaloSlideShow.current = setInterval(()=>{
+        //         moverDerecha();
+        //     },10000);
+        // })
     },[])
 
+  
     const moverDerecha = ()=>{
-        if(slideShow.current.children.length>0){
+        if(slideShow.current!==undefined)
+            if(slideShow.current.children.length>0){
             //console.log(slideShow.current);
             
             //Consigo la primer imagen
             const primerElemento = slideShow.current.children[0];
-
+            
+            //Mover el calesita ->
             slideShow.current.style.transition = '3000ms ease-out all';
-
+            //Consigo el ancho de la imagen
             const ancho = slideShow.current.children[0].offsetWidth
-
             //Mover carousel
             slideShow.current.style.transform = 'translateX(-' + ancho + 'px)';
-
+            //Elevento para la transicion del elemento
             const transicion = () => {
                 slideShow.current.style.transition= 'none';
                 slideShow.current.style.transform= 'translateX(0)';
                 slideShow.current.appendChild(primerElemento);
+                //Se remueve el evento del "slide" para que no mueva de nuevo
                 slideShow.current.removeEventListener('transitionend',transicion)
             }
-           
+           //Se añade un evento al "slide" para mover el elemento mostrado al final
             slideShow.current.addEventListener('transitionend',transicion);
         }
-
     }
     
     const moverIzquierda = ()=>{
@@ -66,7 +68,7 @@ const SlideShow = () =>{
            
         }
     }
-
+    
     return (
         <div className="ContenedorSlicePrincipal">
             <div className="ContenedorSlideShow" ref={slideShow}>
@@ -100,8 +102,12 @@ const SlideShow = () =>{
                             <Jimi />
                         </div> */}
                     </div>
-
-                  
+                    <div className="Slide">
+                        <img src="https://images.alphacoders.com/308/thumb-1920-308783.jpg" />
+                        {/* <div className="TextoSlide">
+                            <Jimi />
+                        </div> */}
+                    </div>
                     
             </div>
                 {/* <div className="ControlesSlice" >

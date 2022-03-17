@@ -5,9 +5,6 @@ import { Routes, Route} from "react-router";
 import { useDispatch } from "react-redux";
 import { initCart } from "./store/carrito";
 import { Navigate } from "react-router";
-
-
-
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -16,10 +13,11 @@ import Cart from "./components/Cart";
 import SingIn from "./components/SingIn";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
+import { setInitCart } from "./store/carrito";
+import UserAdmin from "./components/Admin/AdminUserListBorrar";
+import DetailsUserAdmin from "./components/Admin/AdminUserBorrar";
 import SlideShow from "./components/SlideShow";
-import Jimi from "./components/Jimi";
 import EnCamino from "./components/EnCamino";
-
 
 const App = () => {
 
@@ -28,12 +26,8 @@ const App = () => {
 
   
   return (
-    <>
+    <div className="has-background-grey-dark">
       <Navbar />
-
-      <SlideShow/>
-      {/* <Jimi /> */}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />   
@@ -47,13 +41,15 @@ const App = () => {
         <Route path="/productos/:marca/:categoria/:serie" element={null}/>
 
         <Route path="/encamino" element={<EnCamino />} />
+        <Route path="/admin/user/delete" element={<UserAdmin />}/>
+        <Route path="/admin/user/delete/:userId" element={<DetailsUserAdmin/>}/>
 
-        <Route path="*" element={<Navigate to = "/"/>} />
+        {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
       </Routes>
       
       <Footer />
-    </>
+    </div>
   );  
 };
 

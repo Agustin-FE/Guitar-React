@@ -22,7 +22,8 @@ routerAdmin.get("/showuser/:id", (req,res) => {
     .catch(err => console.log(err))
 })
 
-routerAdmin.delete('deleteuser/:id', function (req, res, next) {
+
+routerAdmin.delete('/deleteuser/:id', function (req, res) {
     const {id} = req.params
         User.destroy({
             where: {
@@ -30,7 +31,6 @@ routerAdmin.delete('deleteuser/:id', function (req, res, next) {
             }
           })
           .then((data) => res.sendStatus(202))
-          .catch(res.sendStatus(204))
   })
 
 routerAdmin.post("/changeuser", (req,res) => {

@@ -23,10 +23,10 @@ const Navbar = () => {
       setLogInClick(false)
     }
   })
-
+  
   return (
     <>
-      <nav className="navbar is-black sticky">
+      <nav className="navbar has-background-black-ter has-text-white sticky">
         <div className="navbar-brand">
           <div className="navbar-item navtext">
             <Link to="/">
@@ -35,6 +35,7 @@ const Navbar = () => {
           </div>
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
+
           <MenuMarcas />
           <div className="navbar-end">
             <div className="navbar-item">
@@ -42,7 +43,7 @@ const Navbar = () => {
               <div className="buttons">
                 
                 <button
-                  className="button is-danger"
+                  className="button has-background-warning-dark has-text-white"
                   onClick={() => setIsSerching(!isSerching)}
                 >
                   <SearchIcon />
@@ -50,12 +51,13 @@ const Navbar = () => {
                 <br />
                 <br />
                 <br />
-                <button id="clickLog" className="button is-danger" 
+                <br />
+                <button id="clickLog" className="button has-background-warning-dark" 
                   onClick={() => setLogInClick(!logInClick)}>
                     <p className="has-text-white">Login</p>
                 </button>
                 <Link to={"/cart"}>
-                <button className="button is-danger">
+                <button className="button has-background-warning-dark">
                   
                     <strong className="has-text-white">
                       <CartIcon />
