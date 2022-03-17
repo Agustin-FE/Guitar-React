@@ -39,6 +39,12 @@ User.init({
     type: S.BOOLEAN,
     defaultValue: false
   },
+  direction:{
+    type: S.STRING,
+  },
+  phoneNumber:{
+    type: S.STRING,
+  },
   salt: {
       type: S.STRING
   }

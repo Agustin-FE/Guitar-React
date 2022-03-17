@@ -6,12 +6,14 @@ export const SingIn = () => {
       [ surname, setSurname ] = useState( "" ),
       [ email, setEmail ] = useState( "" ),
       [ password, setPassword ] = useState( "" ),
-      [ sign, setSign ] = useState( false )
+      [ sign, setSign ] = useState( false ),
+      [phone, setPhone ] = useState (""),
+      [direction, setDirection] = useState ("")
 
    useEffect ( () => {
       if ( sign ) {
          axios
-         .post("http://localhost:3001/api/users/register", { name: name,surname: surname,email: email, password: password } )
+         .post("http://localhost:3001/api/users/register", { name: name,surname: surname,email: email, password: password, phoneNumber: phone, direction: direction} )
          .then (res => res.data)
          .then( datos => {
 
@@ -19,6 +21,8 @@ export const SingIn = () => {
             setSurname( "" )
             setEmail( "" )
             setPassword( "" )
+            setPhone ("")
+            setDirection("")
             console.log("Estas registrado", datos)
          } )
       }
@@ -50,8 +54,18 @@ export const SingIn = () => {
       setPassword( e.target.value )
    }
 
+   const phoneHandler = e => {
+      e.preventDefault()
+      setPhone( e.target.value )
+   }
+
+   const directionHandler = e => {
+      e.preventDefault()
+      setDirection( e.target.value )
+   }
+
    return (
-      <div className = "container">
+      <div className = "container grow-content">
          <h2 className = "title is-2" >Registro</h2>
       
          <p className = "content" >Llene el siguente formulario para registrarse</p>
@@ -87,6 +101,22 @@ export const SingIn = () => {
                   type = "password"  
                   placeholder="Password"  
                   name = "password" />
+            </div>
+
+            <div className="field">
+               <input className="input is-primary" onChange = { phoneHandler } 
+                  value = { phone } 
+                  type = "text"  
+                  placeholder="Telefono"  
+                  name = "phone" />
+            </div>
+
+            <div className="field">
+               <input className="input is-primary" onChange = { directionHandler } 
+                  value = { direction } 
+                  type = "text"  
+                  placeholder="Direccion"  
+                  name = "direction" />
             </div>
 
             <div className = "buttons is-right" >

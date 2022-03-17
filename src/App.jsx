@@ -30,6 +30,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+
       <SlideShow/>
       {/* <Jimi /> */}
 
