@@ -1,15 +1,22 @@
 const db = require('./db');
 const User = require('./Users');
 const Product = require('./Products')
-const Carrito = require('./Carrito')
-const Order = require('./Orden')
+const Order = require('./Order')
 const OrderItem = require('./OrderItem')
-const CarritoItem = require('./Carritoitem')
+const CarritoItem = require('./Carritoitem');
 
 // el usuario tiene 1 carrito
 User.belongsToMany(Product ,{through: CarritoItem})
 // el carrito pertenece al usuario
 Product.belongsToMany(User,{through: CarritoItem})
+
+Order.belongsToMany(Product,{through: OrderItem})
+// el carrito pertenece al usuario
+Product.belongsToMany(Order,{through: OrderItem})
+//Order.hasOne(User, {foreignKey: 'userid'})
+
+Order.belongsTo(User)
+User.hasMany(Order)
 
 /*
 // el usuario tiene 1 carrito
@@ -30,4 +37,4 @@ Carrito.belongsToMany(Product,{through: CarritoItem})
 Product.belongsToMany(Carrito,{through: CarritoItem})*/
 
 
-module.exports = {db, User, Product, Carrito, CarritoItem, Order, OrderItem}
+module.exports = {db, User, Product, CarritoItem, Order, OrderItem}

@@ -1,6 +1,7 @@
 const express = require('express')
 const routerProduct = express.Router()
-const Product = require('../models/Products')
+const { Op } = require("sequelize");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 
 
 routerProduct.get("/guitar", (req,res) => {
@@ -29,14 +30,15 @@ routerProduct.get("/:marca/:categoria", (req,res) => {
     })
 })
 
-routerProduct.get("/:nombre", (req,res) => {
+/*routerProduct.get("/:nombre", (req,res) => {
     const nombre = req.params
-    Product.findAll({ where: nombre})
-    .then(guitar => {
-        res.status(201).send(guitar)
+    const findProduct = await Product.findAll({ 
+        where:{
+            marca: {[op.startWith]: nombre},
+        }
     })
-})
-
+    return(res.status(201).send(findProduct))
+})*/
 
 
 module.exports = routerProduct;
