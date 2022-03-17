@@ -1,9 +1,9 @@
-// import { useParams } from "react-router";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// import { useDispatch, useSelector } from "react-redux";
-// import { setCarrito } from "../store/carrito";
-// import ButtonCart from "./ButtonCart";
+import { useParams } from "react-router";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setCarrito } from "../store/carrito";
+import ButtonCart from "./ButtonCart";
 
 
 const Details = () =>{
