@@ -1,10 +1,9 @@
-import { useParams } from "react-router";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { setCarrito } from "../store/carrito";
-import ButtonCart from "./ButtonCart";
-
+// import { useParams } from "react-router";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useDispatch, useSelector } from "react-redux";
+// import { setCarrito } from "../store/carrito";
+// import ButtonCart from "./ButtonCart";
 
 
 const Details = () =>{
@@ -14,14 +13,13 @@ const Details = () =>{
   const user = useSelector( state => state.user )
   //const [cartUser,setCartUser] = useState([]);
 
-  useEffect(() => {
-    axios(`http://localhost:3001/api/product/${id}`)
-      .then((res) => res.data)
-      .then((data) => {
-        return setGuitar(data);
-      });
-  }, [id]);
-
+   useEffect(() => {
+     axios(`http://localhost:3001/api/product/${id}`)
+       .then((res) => res.data)
+       .then((data) => {
+         return setGuitar(data);
+       });
+   }, [id]);
 
   return (
     <>
@@ -113,4 +111,3 @@ const Details = () =>{
 };
 
 export default Details;
-
