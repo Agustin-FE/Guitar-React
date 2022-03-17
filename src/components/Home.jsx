@@ -1,5 +1,5 @@
-import React from "react";
 
+import React from "react";
 import Grilla from "./Gtilla";
 import SlideShow from "./SlideShow";
 import Text from "./Text";
