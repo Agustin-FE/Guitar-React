@@ -22,9 +22,9 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Les Paul</a>
-                <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a>
+              <Link to={"/gibson/electrics/lespaul"}><a className="dropdown-item">Les Paul</a></Link>
+              <Link to={"/gibson/electrics/sg"}><a className="dropdown-item">SG</a></Link>
+              <Link to={"/gibson/electrics/es"}><a className="dropdown-item">ES</a></Link>
               </div>
             </div>
           </div>
@@ -41,8 +41,8 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a>
+              <Link to={"/gibson/acoustics/originalcollections"}><a className="dropdown-item">Original Collection</a></Link>
+              <Link to={"/gibson/acoustics/artistcollections"}><a className="dropdown-item">Artist Collection</a></Link>
               </div>
             </div>
           </div>
@@ -71,9 +71,9 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Les Paul</a>
-                <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a>
+              <Link to={"/fender/electrics/stratocaster"}><a className="dropdown-item">Stratocaster</a></Link>
+              <Link to={"/fender/electrics/telecaster"}><a className="dropdown-item">Telecaster</a></Link>
+              <Link to={"/fender/electrics/jazzmaster"}><a className="dropdown-item">Jazzmaster</a></Link>
               </div>
             </div>
           </div>
@@ -90,8 +90,8 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a>
+              <Link to={"/fender/acoustics/paramount"}><a className="dropdown-item">Paramount</a></Link>
+              <Link to={"/fender/acoustics/classicdesign"}><a className="dropdown-item">Classic Design</a></Link>
               </div>
             </div>
           </div>
@@ -120,9 +120,7 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Les Paul</a>
-                <a className="dropdown-item">SG</a>
-                <a className="dropdown-item">ES</a>
+              <Link to={"/gretsch/electrics/hollowbody"}><a className="dropdown-item">Hollow Body</a></Link>
               </div>
             </div>
           </div>
@@ -139,8 +137,7 @@ const MenuMarcas = () => {
             </a>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-                <a className="dropdown-item">Original Collection</a>
-                <a className="dropdown-item">Artist Collection</a>
+              <Link to={"/gretsch/acoustics/rancher"}><a className="dropdown-item">Rancher</a></Link>
               </div>
             </div>
           </div>
