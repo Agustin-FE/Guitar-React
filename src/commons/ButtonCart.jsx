@@ -56,6 +56,8 @@ const ButtonCart = ({ productId }) => {
         <span class="tooltiptext">Eliminar</span>
       </button>
       </div>
+     {/* // <button className="buttonCompra" onClick={ cartHandler }>Cambiar carrito </button> // ESTO NOS PEDIA QUE SAQUEMOS POR LAS DUDAS LE METIMOS UN COMENTARIO XD */}
+
     </>
     
   );

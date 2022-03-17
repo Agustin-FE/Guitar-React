@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCarrito } from "../store/carrito";
 import ButtonCart from "./ButtonCart";
 
-const Details = () => {
-  // const dispatch = useDispatch()
-  // dispatch( setCarrito( "data" ) )
 
+
+const Details = () =>{
+  
   const { id } = useParams();
   const [guitar, setGuitar] = useState([]);
   const user = useSelector( state => state.user )
@@ -22,8 +22,6 @@ const Details = () => {
       });
   }, [id]);
 
-  /*********** Posiblemente las categorias vengan como un Array, tener en cuenta!!! ******/
-  //<p> <strong> Categorias: </strong> {guitar.categoria ? guitar.categoria.map((category) =>  category.name ).join(", "):"-"} </p>
 
   return (
     <>
@@ -61,6 +59,7 @@ const Details = () => {
               <ButtonCart productId={guitar.id} />
             </div>
           </div>
+
 
           <div className="opiniones">
           <p>
@@ -114,3 +113,4 @@ const Details = () => {
 };
 
 export default Details;
+
