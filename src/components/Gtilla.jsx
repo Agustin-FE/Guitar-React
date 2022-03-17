@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 
 import TilesRow from "../commons/TilesRow"
 import { useParams } from "react-router"
@@ -16,7 +17,6 @@ const Grilla = () => {
     marca = marca ? "/"+marca : ""
     categoria = categoria ? "/"+categoria : ""
     serie = serie ? "/"+serie : ""
-
     axios
     .get(`http://localhost:3001/api/product${marca}${categoria}${serie}` )
     .then( res => res.data )
@@ -56,4 +56,5 @@ const Grilla = () => {
     ) */}
 }
 
-export default Grilla
+
+export default Grilla;

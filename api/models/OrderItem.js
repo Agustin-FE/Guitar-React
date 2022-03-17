@@ -4,9 +4,9 @@ const db = require('./db');
 class OrderItem extends S.Model {}
 
 OrderItem.init({
-  cantidad:{
-    type: S.INTEGER,
-},
+    cantidad:{
+        type: S.INTEGER,
+    },
 }, { sequelize: db, modelName: 'orderItem' });  
 
 

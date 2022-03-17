@@ -11,8 +11,11 @@ Order.init({
     formaDePago:{
         type:S.STRING,
         allowNull: false
+    },
+    ordenDeCompra:{
+        type:S.INTEGER,
+        allowNull: false
     }
-}, { sequelize: db, modelName: 'order' });  
-
+}, { sequelize: db, modelName: 'orders' });  
 
 module.exports = Order;

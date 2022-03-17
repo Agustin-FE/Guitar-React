@@ -48,7 +48,7 @@ User.init({
   salt: {
       type: S.STRING
   }
-}, { sequelize: db, modelName: 'user' });   
+}, { sequelize: db, modelName: 'users' });   
 
 User.beforeCreate((user) => {
   return bcrypt

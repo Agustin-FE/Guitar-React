@@ -5,7 +5,7 @@ const cors = require("cors")
 const passport = require("passport")
 const localStrategy = require("passport-local").Strategy;
 const sessions = require("express-session");
-const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("./models/index");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("./models/index");
 const morgan = require("morgan");
 const volleyball = require('volleyball');
 

@@ -2,6 +2,7 @@
     display: flex;
     padding: 2rem;
   }
+
   .buttonCompra {
     --color: #00A97F;
     padding: 0.8em 1.7em;
@@ -57,7 +58,7 @@
    .buttonCompra:active {
     filter: brightness(.8);
    }
-   
+
    .description-product{
     padding: 1rem 2rem;
     border-radius: 30px;

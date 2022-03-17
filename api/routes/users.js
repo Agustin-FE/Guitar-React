@@ -1,6 +1,6 @@
 const express = require('express')
 const routerUser = express.Router()
-const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../models/index");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 const passport = require('passport');
 
 
@@ -45,5 +45,13 @@ routerUser.post("/me", (req,res) => {
     .catch(err => console.log(err))
 })
 
+//vas al perfil del que esta logeado
+routerUser.get("/:id", (req,res) => {
+    const {id} = req.params
+    User.findByPk({where: {id}})
+    .then((user)=> {
+        res.status(201).send(user);
+    })
+})
 
 module.exports = routerUser;
