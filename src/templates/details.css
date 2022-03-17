@@ -19,6 +19,7 @@
     z-index: 1;
     margin-right: 20px;
     height: 38px;
+
    }
    
    .buttonCompra::before, .buttonCompra::after {
@@ -95,4 +96,11 @@
    .letras{
      margin-left: 15px;
      color: #151817
+   }
+
+   .opiniones{
+     width: 100%;
+     overflow: scroll;
+     height: 16em;
+     margin: 15px
    }

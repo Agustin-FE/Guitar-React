@@ -3,7 +3,7 @@
 }
 
 .grow-content {
-    min-height: calc(100vh - 224px);
+    min-height: calc(100vh - 180px);
 }
 
 .chico{width:50px;
