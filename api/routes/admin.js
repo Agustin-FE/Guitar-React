@@ -1,8 +1,9 @@
 const express = require('express')
 const routerAdmin = express.Router()
-const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../models/index");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 const passport = require('passport');
 
+// ------------------------------------------------- usuarios -------------------------------------------------
 
 routerAdmin.get("/showuser", (req,res) => {
         User.findAll()
@@ -10,6 +11,15 @@ routerAdmin.get("/showuser", (req,res) => {
             res.status(201).send(users)
         })
         .catch(err => console.log(err))
+})
+
+routerAdmin.get("/showuser/:id", (req,res) => {
+    const {id} = req.params
+    User.findOne({where: {id}})
+    .then(users => {
+        res.status(201).send(users)
+    })
+    .catch(err => console.log(err))
 })
 
 routerAdmin.delete('deleteuser/:id', function (req, res, next) {
@@ -31,6 +41,8 @@ routerAdmin.post("/changeuser", (req,res) => {
         .then((data) => res.sendStatus(200))
         .catch(err => console.log(err))
 })
+
+// ------------------------------------------------- productos -------------------------------------------------
 
 routerAdmin.post("/addproduct", (req,res) => {
     const {nombre, precio,descripcion, categoria, marca, imagen, imagen2, stock} = req.body
@@ -76,5 +88,9 @@ routerAdmin.post("/changeproduct", (req,res) => {
             res.status(201).send(product)
         })
 })
+
+// ------------------------------------------------- categorias -------------------------------------------------
+
+
 
 module.exports = routerAdmin;

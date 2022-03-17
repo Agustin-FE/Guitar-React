@@ -1,6 +1,6 @@
 const express = require('express')
 const routerCarrito = express.Router()
-const {db, User, Product, Carrito, CarritoItem, Order, OrderItem} = require("../models/index");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 
 
 
@@ -52,6 +52,13 @@ routerCarrito.put("/update/:userId/:productId", (req, res) => {
     .then( () =>
         res.send( req.body ) )
 })
+
+routerCarrito.delete("/destroy/:id", (req, res) => {
+    const {id} = req.params
+    CarritoItem.destroy({ where: { userId: id } })
+    .then(() => res.send(id))
+})
+
 
 
 module.exports = routerCarrito
