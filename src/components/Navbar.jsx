@@ -54,13 +54,15 @@ const Navbar = () => {
                   onClick={() => setLogInClick(!logInClick)}>
                     <p className="has-text-white">Login</p>
                 </button>
+                <Link to={"/cart"}>
                 <button className="button is-danger">
-                  <Link to={"/cart"}>
+                  
                     <strong className="has-text-white">
                       <CartIcon />
                     </strong>
-                  </Link>
+                  
                 </button>
+                </Link>
               </div>
             </div>
           </div>

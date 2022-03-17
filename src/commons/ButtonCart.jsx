@@ -25,14 +25,14 @@ const ButtonCart = ({ productId }) => {
       e.preventDefault()
       setCantidad( parseInt(e.target.value, 10) )
     }
-
+    // { isInCart ? isInCart.cantidad : cantidad } 
   return (
     <>
     <div className="carritoStyle">
       <input className = "input is-primary chico"
         type = "number" 
         min = {0} max = {8} 
-        value = { isInCart ? isInCart.cantidad : cantidad } 
+        value = { cantidad } 
 
         onChange = {changeHandler}  />
 
@@ -56,7 +56,6 @@ const ButtonCart = ({ productId }) => {
         <span class="tooltiptext">Eliminar</span>
       </button>
       </div>
-
      {/* // <button className="buttonCompra" onClick={ cartHandler }>Cambiar carrito </button> // ESTO NOS PEDIA QUE SAQUEMOS POR LAS DUDAS LE METIMOS UN COMENTARIO XD */}
 
     </>
