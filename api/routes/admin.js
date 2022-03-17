@@ -12,7 +12,16 @@ routerAdmin.get("/showuser", (req,res) => {
         .catch(err => console.log(err))
 })
 
-routerAdmin.delete('deleteuser/:id', function (req, res, next) {
+routerAdmin.get("/showuser/:id", (req,res) => {
+    const {id} = req.params
+    User.findOne({where: {id}})
+    .then(users => {
+        res.status(201).send(users)
+    })
+    .catch(err => console.log(err))
+})
+
+routerAdmin.delete('/deleteuser/:id', function (req, res) {
     const {id} = req.params
         User.destroy({
             where: {
@@ -20,7 +29,6 @@ routerAdmin.delete('deleteuser/:id', function (req, res, next) {
             }
           })
           .then((data) => res.sendStatus(202))
-          .catch(res.sendStatus(204))
   })
 
 routerAdmin.post("/changeuser", (req,res) => {
@@ -77,4 +85,4 @@ routerAdmin.post("/changeproduct", (req,res) => {
         })
 })
 
-module.exports = router;
+module.exports = routerAdmin;

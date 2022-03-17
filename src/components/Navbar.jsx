@@ -21,7 +21,7 @@ const Navbar = () => {
       setLogInClick(false)
     }
   })
-
+  
   return (
     <>
       <nav className="navbar is-black sticky">
@@ -35,6 +35,7 @@ const Navbar = () => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <MenuMarcas serie={["Les Paul", "SG", "ES"]} serie2={["Original Collection", "Artist Collection"]}/>
+          
           <div className="navbar-end">
             <div className="navbar-item">
                 {isSerching && <SearchBar />}

@@ -1,7 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+
 const MenuMarcas = ({ serie, serie2 }) => {
+
+  const isLoged = useSelector( state => state.user )
+
   return (
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
@@ -218,6 +223,52 @@ const MenuMarcas = ({ serie, serie2 }) => {
           </a>
         </div>
       </div>
+      
+      { isLoged ? isLoged.admin ? 
+
+      <div className="navbar-item has-dropdown is-hoverable">
+        <a className="navbar-link">
+          <strong> Administrar </strong>
+        </a>
+        <div className="navbar-dropdown">
+          <div className="nested dropdown">
+            <a className="navbar-item">
+              <span className="icon-text">
+               
+                  <span>Usuarios</span>
+                
+                <span className="icon">
+                  <i className="fas fa-chevron-right"></i>
+                </span>
+              </span>
+            </a>
+            <div className="dropdown-menu" id="dropdown-menu" role="menu">
+              <div className="dropdown-content">
+                <Link to={`/admin/user/delete`} className="dropdown-item">
+                      Borrar
+                </Link>
+                <Link to={`/admin/user/modify`} className="dropdown-item">
+                      Modificar
+                </Link>
+              </div>
+            </div>
+
+          </div>
+          <div className="nested dropdown">
+            <a className="navbar-item">
+              <span className="icon-text ">
+                <Link to={"/admin/product"} className="icon-text">
+                  <span>Productos</span>
+                </Link>
+                <span className="icon">
+                  <i className="fas fa-chevron-right"></i>
+                </span>
+              </span>
+            </a>
+            
+          </div>
+        </div>
+      </div>:null : null}
 
     </div>
   );

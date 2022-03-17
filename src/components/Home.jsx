@@ -1,13 +1,13 @@
 import React from "react"
 
 import Grilla from "./Gtilla"
-import Jimi from "./Jimi"
+import SlideShow from "./SlideShow"
 
 const Home = () => {
 
   return (
     <>
-      <Jimi />
+      {/*<SlideShow/>*/}
       <Grilla />
     </> )
 }
