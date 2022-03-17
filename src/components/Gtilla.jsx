@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 
-import TilesRow from "./TilesRow"
+import TilesRow from "../commons/TilesRow"
 import { useParams } from "react-router"
 
 const Grilla = () => {
