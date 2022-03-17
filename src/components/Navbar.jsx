@@ -23,7 +23,7 @@ const Navbar = () => {
       setLogInClick(false)
     }
   })
-
+  
   return (
     <>
       <nav className="navbar is-black sticky">
@@ -35,6 +35,7 @@ const Navbar = () => {
           </div>
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
+
           <MenuMarcas />
           <div className="navbar-end">
             <div className="navbar-item">

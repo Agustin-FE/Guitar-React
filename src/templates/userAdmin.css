@@ -1,0 +1,20 @@
+.ConteinerUserAdmin{
+    display: flex;
+    padding: 10px;
+    min-width: 100%;
+    justify-content: center;
+}
+
+.ListaUsersAdmin{
+    min-width: 30%
+}
+
+.userModificarAdmin{
+    padding: 50px;
+    min-width: 50%
+}
+
+.ButonesUserAdmin{
+    display: flex;
+    justify-content: center;
+}

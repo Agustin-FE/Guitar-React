@@ -2,6 +2,9 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css";
 
 
+/* Botones para reutilizar en la página*/ 
+@import "./templates/buttons.css";
+
 @import "./templates/details.css";
 @import "./templates/cart.css";
 @import "./templates/listItem.css";
@@ -12,7 +15,8 @@
 @import "./templates/card.css";
 @import "./templates/dropdown.css"; 
 @import "./templates/slideShow.css"; 
-@import "./templates/navbar.css"; 
+@import "./templates/navbar.css";
+@import "./templates/userAdmin.css";
 
 body {
    background-color: #d2d2d2a7;
