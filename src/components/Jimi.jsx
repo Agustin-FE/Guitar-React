@@ -11,7 +11,6 @@ const Jimi = () => {
           </p>
         </header>
       </section>
-      {/* <img src="https://images8.alphacoders.com/636/636629.jpg"></img> */}
     </>
   );
 };

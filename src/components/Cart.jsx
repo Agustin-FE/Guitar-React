@@ -4,12 +4,15 @@ import ListItem from "../commons/ListItem";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import FormCar from "./FormCar";
+import EnCamino from "./EnCamino";
 
 const Cart = () =>{
     const [isLoading,setIsLoading] = useState([true])
     //const [guitars, setGuitars] = useState([]);
     const [total, setTotal] = useState(0);
     const guitars = useSelector( state => state.cart )
+    let [isSell, setIsSell] = useState(false);
+
        //const guitars = useSelector( state => state.cart )
    
        useEffect(()=>{
@@ -35,25 +38,27 @@ const Cart = () =>{
                 <div className="itemsContainer">
                 <div className="formularioEnvio">
                 {guitars.map((guitar, i)=>{
-                        return ( <ListItem product = {guitar} key={i} /> ) })} 
+                return ( <ListItem productId = {guitar.productId} key={i} /> ) })} 
                 </div>
                 <div className="formularioEnvio">
                     <FormCar />
                 </div>
                 </div>
 
+
                 <hr/>
                 <div className="totalCompra">
                     <p> <strong> Total: u$s </strong> {total}</p>
                 </div>
+                {isSell && <EnCamino />}
                 <div className="finalizarCompra">
                     <div>
-
-
-                     <button className="buttonCompra"> Finalizar Compra </button>
+                
+                     <button className="buttonCompra" onClick={() => setIsSell(!isSell)}> Finalizar Compra </button>
 
                     </div>
                 </div>
+                
                    
 
         </div>

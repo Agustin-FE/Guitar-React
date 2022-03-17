@@ -1,5 +1,4 @@
 import React from "react"
-
 import Grilla from "./Gtilla"
 import SlideShow from "./SlideShow"
 

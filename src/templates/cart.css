@@ -3,11 +3,16 @@
 }
 
 .grow-content {
-    min-height: calc(100vh - 224px);
+    min-height: calc(100vh - 180px);
 }
 
 .chico{width:50px;
      margin-right:10px
+}
+
+.maschico{
+    width: 48px;
+    height: 25px;
 }
 
 .itemsContainer{

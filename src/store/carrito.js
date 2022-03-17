@@ -1,37 +1,71 @@
-import { createAction, createReducer } from "@reduxjs/toolkit"
+import { createAction, createAsyncThunk, createReducer } from "@reduxjs/toolkit"
+import axios from "axios"
 
-export const setInitCart = createAction( "INITCART" )
-export const setCart = createAction( "ADDCART" )
-export const setNumber = createAction( "SETCOUNT" )
-export const removeCart = createAction( "REMOVECART" )
+export const initCart = createAsyncThunk( "INITCART" ,  ( args, thunk ) =>
+
+   axios
+   .get( `http://localhost:3001/api/carrito/show/${args.userId}` )
+   .then( res => {
+      if (res.data)
+         return res.data
+
+      if ( localStorage.getItem( "cart" ) )
+         return JSON.parse( localStorage.getItem( "cart" )  )
+   } )
+)
+
+export const addCart = createAsyncThunk( "ADDCART", ( args, thunk ) =>
+
+    axios.post( "http://localhost:3001/api/carrito/add", args )
+   .then( res => res.data ) 
+)
+
+export const updateCart =createAsyncThunk( "UPDATECART", ( args, thunk ) =>
+
+   axios
+   .put( `http://localhost:3001/api/carrito/update/${args.userId}/${args.productId}`, args )
+   .then( res => res.data ) 
+)
+
+export const removeCart = createAsyncThunk( "REMOVECART", ( args, thunk ) =>
+
+   axios
+   .delete( `http://localhost:3001/api/carrito/delete/${args.userId}/${args.productId}` )
+   .then( res => res.data ) 
+)
+      
+
+
 
 export const carrito = createReducer( [], { 
-   [ setInitCart ]: ( state, action ) => action.payload,
-   [ setCart ]: ( state, action ) => {
-         localStorage.setItem( "cart", JSON.stringify( [...state, action.payload] ) )
-         return [...state, action.payload]
+   [ initCart.fulfilled ]: ( state, action ) => {
+      localStorage.setItem( "cart", JSON.stringify( action.payload ) )
+      return action.payload
    },
-   [ setNumber ]: ( state, action ) => {
-      const { id, cantidad } = action.payload
-      const index = state.findIndex( elemento => elemento.id === id)
+   
+   [ addCart.fulfilled ]: ( state, action ) => {
+      localStorage.setItem( "cart", JSON.stringify( [...state, action.payload] ) )
+      return [...state, action.payload]
+   },
+   
+   [ updateCart.fulfilled ]: ( state, action ) => {
+      const { productId, cantidad } = action.payload
+      const index = state.findIndex( elemento => elemento.productId === productId)
       state[index].cantidad = cantidad
       localStorage.setItem( "cart", JSON.stringify( state ) )
       return state
    },
-   [ removeCart ]: ( state, action ) => 
-         state.filter( producto => producto.id !== action.payload )
-} )
-/*export const carrito = createReducer( [], { 
-   [ setCarrito ]: ( state, action ) => {
-      const newCart = []
-      if(state.cart) {
-         newCart = state.cart
-      }
-     //const newCart = state.cart
-     newCart.push(action.payload);
-      return newCart;
+   
+   [ removeCart.fulfilled ]: ( state, action ) => {
+      let { productId } = action.payload
+      productId = parseInt(productId, 10)
+      let newCart = [...state].filter( item => item.productId !== productId )
+      localStorage.setItem( "cart", JSON.stringify( newCart ) )
+      return newCart
    }
-} )*/
+         
+} )
+
 //Guardar valor
 //const dispatch = useDispatch()
 //dispatch( setAlgo( "data" ) )
