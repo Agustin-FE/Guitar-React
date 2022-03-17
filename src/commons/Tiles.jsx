@@ -8,7 +8,7 @@ import { ReactComponent as EpiphoneIcon } from "../essets/epiphone.svg";
 const Tiles = ( { producto } ) => {
 
   return ( 
-    <div className = "mothertile column">
+    <td className = "mothertile">
       <Link to = {"/guitar/" + producto.id}>
         <div className="tile">
           <div className="tile2 columns">
@@ -26,7 +26,7 @@ const Tiles = ( { producto } ) => {
           </div>
         </div>
       </Link>
-    </div> )
+    </td> )
  }
 
  export default Tiles

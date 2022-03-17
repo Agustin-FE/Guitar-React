@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 
 
-routerProduct.get("/guitar", (req,res) => {
+routerProduct.get("/", (req,res) => {
     Product.findAll()
     .then(guitar => {
         res.status(201).send(guitar)
