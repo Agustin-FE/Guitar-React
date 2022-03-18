@@ -17,7 +17,7 @@ const AdminUserModificar = ()=>{
     const [chequeoCambio,setChequeoCambio] = useState(false);
 
     useEffect(()=>{
-        axios(`http://localhost:3001/api/admin/showuser/${userId}`)
+        axios.get(`http://localhost:3001/api/admin/showuser/${userId}`)
         .then((res) => res.data)
         .then((data)=> {
             setNombre(data.name);
@@ -26,19 +26,23 @@ const AdminUserModificar = ()=>{
             setTelefono(data.phoneNumber);
             setDireccion(data.direction);
             setAdmin(data.admin);
-            console.log(data.admin)
        return setUser(data)})
     },[])
 
     const handleModificar =()=>{
         if(chequeoCambio){
-            Swal.fire({
+            console.log(user.admin)
+            axios.post(`http://localhost:3001/api/admin/changeuser`, {user})
+            .then((res) => {
+                console.log(res.data)
+                    Swal.fire({
                 position: 'center',
                 icon: 'success',
                 title: 'Se guardaron los cambios realizados ',
                 showConfirmButton: false,
                 timer: 1800
-                })}
+                })})
+           }
         else{
             Swal.fire({
                 title: 'No Hubo Cambios',
@@ -77,8 +81,16 @@ const AdminUserModificar = ()=>{
     }
 
     const handleChangeAdmin =(event)=>{
-        console.log(event.target.value)
         setAdmin(!admin);
+        setUser({id: user.id,
+            name: user.name,
+            surname:  user.surname,
+            email: user.email,
+            password: user.password,
+            admin: !user.admin,
+            direction: user.direction,
+            phoneNumber: user.phoneNumber
+        })
         setChequeoCambio(true);
     }
 
@@ -120,7 +132,7 @@ const AdminUserModificar = ()=>{
             </div>
         </div>
 
-        <label class="checkbox"> <input type="checkbox" defaultChecked={admin ? "on":"off"} onChange={handleChangeAdmin}/>
+        <label class="checkbox"> <input type="checkbox" checked={admin ? true:false} onChange={handleChangeAdmin}/>
             Privilegio Administrador
         </label>
         <div className="ButonesUserAdmin">

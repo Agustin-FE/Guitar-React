@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route} from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { initCart } from "./store/carrito";
 import { Navigate } from "react-router";
 import Footer from "./components/Footer";
@@ -24,6 +24,7 @@ const App = () => {
   const dispatch = useDispatch()
   dispatch( initCart( { userId: 1 } ) )
 
+  const isLoged = useSelector( state => state.user )
   
   return (
     <div>
@@ -41,11 +42,15 @@ const App = () => {
         <Route path="/products/:marca/:categoria/:serie" element={<Grilla />}/>
 
         <Route path="/encamino" element={<EnCamino />} />
-        <Route path="/admin/user/delete" element={<AdminUserList />}/>
-        <Route path="/admin/user/delete/:userId" element={<AdminUserBorrar/>}/>
-        <Route path="/admin/user/modify" element={<AdminUserList />}/>
-        <Route path="/admin/user/modify/:userId" element={<AdminUserModificar />}/>
-
+        {isLoged ? 
+        isLoged.admin ?
+        <>
+          <Route path="/admin/user/delete" element={<AdminUserList />}/>
+          <Route path="/admin/user/delete/:userId" element={<AdminUserBorrar/>}/>
+          <Route path="/admin/user/modify" element={<AdminUserList />}/>
+          <Route path="/admin/user/modify/:userId" element={<AdminUserModificar />}/>
+          </>
+        : null:null}
         {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
       </Routes>

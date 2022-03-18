@@ -33,13 +33,15 @@ routerAdmin.delete('/deleteuser/:id', function (req, res) {
           .then((data) => res.sendStatus(202))
   })
 
-routerAdmin.post("/changeuser", (req,res) => {
-        User.update(req.body,
-        { where:{
-            admin : true,
-        }})
-        .then((data) => res.sendStatus(200))
-        .catch(err => console.log(err))
+  routerAdmin.post("/changeuser/", (req,res) => {
+    const {admin} = req.body
+    //const {id} = req.params
+    User.update(req.body,
+    { where:{
+        admin : admin,
+    }})
+    .then((data) => res.sendStatus(200))
+    .catch(err => console.log(err))
 })
 
 // ------------------------------------------------- productos -------------------------------------------------
