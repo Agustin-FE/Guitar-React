@@ -10,33 +10,33 @@ const MenuMarcas = () => {
   return (
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link has-background-black-ter">
-         <Link to={"/gibson"}><strong className="has-text-white" >Gibson</strong><p className="has-text-white">®-Guitars</p></Link>
-        </a>
+        <div className="navbar-link has-background-black-ter">
+         <Link to={"/products/Gibson"}><strong className="has-text-white" >Gibson</strong></Link><p className="has-text-white">®-Guitars</p>
+        </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
-            <a className="navbar-item">
+            <div className="navbar-item">
               <span className="icon-text">
-                <Link to={"/gibson/electrics"} className="icon-text">
+                <Link to={"/products/Gibson/electrica"} className="icon-text">
                   <span >Electrics</span>
                 </Link>
                 <span className="icon">
                   <i className="fas fa-chevron-right"></i>
                 </span>
               </span>
-            </a>
+            </div>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-              <Link to={"/gibson/electrics/lespaul"}><a className="dropdown-item">Les Paul</a></Link>
-              <Link to={"/gibson/electrics/sg"}><a className="dropdown-item">SG</a></Link>
-              <Link to={"/gibson/electrics/es"}><a className="dropdown-item">ES</a></Link>
+              <Link to={"/products/Gibson/electrica/les%20paul"}><a className="dropdown-item">Les Paul</a></Link>
+              <Link to={"/products/Gibson/electrica/sg"}><a className="dropdown-item">SG</a></Link>
+              <Link to={"/products/Gibson/electrica/es"}><a className="dropdown-item">ES</a></Link>
               </div>
             </div>
           </div>
           <div className="nested dropdown">
             <div className="navbar-item">
               <span className="icon-text ">
-                <Link to={"/gibson/acoustica"} className="icon-text">
+                <Link to={"/products/Gibson/acustica"} className="icon-text">
                   <span>Acoustics</span>
                 </Link>
                 <span className="icon">
@@ -46,8 +46,8 @@ const MenuMarcas = () => {
             </div>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
-              <Link to={"/gibson/acoustics/originalcollections"}><a className="dropdown-item">Original Collection</a></Link>
-              <Link to={"/gibson/acoustics/artistcollections"}><a className="dropdown-item">Artist Collection</a></Link>
+              <Link to={"/products/Gibson/acoustica/original%20collections"}><a className="dropdown-item">Original Collection</a></Link>
+              <Link to={"/products/Gibson/acoustica/artist%20collections"}><a className="dropdown-item">Artist Collection</a></Link>
               </div>
             </div>
           </div>
@@ -59,9 +59,9 @@ const MenuMarcas = () => {
       </div>
 
       <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link has-background-black-ter">
-          <Link to={"/fender"}><strong className="has-text-white">Fender</strong><p className="has-text-white">®-Guitars</p></Link>
-        </a>
+        <div className="navbar-link has-background-black-ter">
+          <Link to={"/fender"}><strong className="has-text-white">Fender</strong></Link><p className="has-text-white">®-Guitars</p>
+        </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
             <a className="navbar-item">
@@ -109,7 +109,7 @@ const MenuMarcas = () => {
 
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link has-background-black-ter">
-       <strong className="has-text-white">Grestch</strong><p className="has-text-white">®-Guitars</p> 
+       <Link to={"/gretsch"}><strong className="has-text-white">Grestch</strong></Link><p className="has-text-white">®-Guitars</p>
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
