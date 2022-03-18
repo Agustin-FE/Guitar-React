@@ -11,7 +11,7 @@ routerProduct.get("/", (req,res) => {
     })
 })
 
-routerProduct.get("/:id", (req,res) => {
+routerProduct.get("/select/:id", (req,res) => {
     const {id} = req.params
     Product.findOne({ where: {id}})
     .then(guitar => {
@@ -21,10 +21,19 @@ routerProduct.get("/:id", (req,res) => {
         console.log(err)
       })
 })
+
+routerProduct.get("/:marca", (req,res) => {
+    const { marca } = req.params
+    Product.findAll({ where: {marca}})
+    .then(guitar => {
+        res.status(201).send(guitar)
+    })
+})
+
 routerProduct.get("/:marca/:categoria", (req,res) => {
-    const marca= req.params.marca
-    const categoria= req.params.categoria
-    Product.findAll({ where: {marca, categoria}})
+    const { marca, categoria }= req.params
+    Product.findAll({ where: {marca, categoria},
+        raw : true})
     .then(guitar => {
         res.status(201).send(guitar)
     })
