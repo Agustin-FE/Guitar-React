@@ -1,5 +1,15 @@
 const Products = require('./Products.js')
 const productos = require('../guitarList.json')
+const User = require('./Users')
+
+User.create( {    
+   name: "ADMIN",    
+   surname: "GR",    
+   admin: true,    
+   email: "admin@guitar.com",     
+   password: "123",     
+   phoneNumber: "0303 456",     
+   direction: "Ruta 66" })
 
 Products.bulkCreate(
    [
