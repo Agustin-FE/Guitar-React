@@ -33,10 +33,12 @@ routerAdmin.delete('/deleteuser/:id', function (req, res) {
           .then((data) => res.sendStatus(202))
   })
 
-routerAdmin.post("/changeuser", (req,res) => {
-        User.update(req.body,
+routerAdmin.post("/changeuser/:id", (req,res) => {
+        const {admin} = req.body
+        const {id} = req.params
+        User.update(admin,
         { where:{
-            admin : true,
+            admin : id,
         }})
         .then((data) => res.sendStatus(200))
         .catch(err => console.log(err))
