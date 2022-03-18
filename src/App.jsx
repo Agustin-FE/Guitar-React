@@ -18,6 +18,7 @@ import UserAdmin from "./components/Admin/AdminUserListBorrar";
 import DetailsUserAdmin from "./components/Admin/AdminUserBorrar";
 import SlideShow from "./components/SlideShow";
 import EnCamino from "./components/EnCamino";
+import Grilla from "./components/Gtilla";
 
 const App = () => {
 
@@ -26,7 +27,7 @@ const App = () => {
 
   
   return (
-    <div className="has-background-grey-dark">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -36,9 +37,9 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart/form_address" element={<FormCar />} />
 
-        <Route path="/productos/:marca" element={null}/>
-        <Route path="/productos/:marca/:categoria" element={null}/>
-        <Route path="/productos/:marca/:categoria/:serie" element={null}/>
+        <Route path="/products/:marca" element={<Grilla />}/>
+        <Route path="/products/:marca/:categoria" element={<Grilla />}/>
+        <Route path="/products/:marca/:categoria/:serie" element={<Grilla />}/>
 
         <Route path="/encamino" element={<EnCamino />} />
         <Route path="/admin/user/delete" element={<UserAdmin />}/>

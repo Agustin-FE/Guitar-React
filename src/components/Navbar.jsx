@@ -28,11 +28,11 @@ const Navbar = () => {
     <>
       <nav className="navbar has-background-black-ter has-text-white sticky">
         <div className="navbar-brand">
-          <div className="navbar-item navtext">
-            <Link to="/">
-              <strong className="has-text-white is-size-5">GUITAR <Logo /> REACT</strong>
-            </Link>
-          </div>
+          <Link to="/">
+            <div className="navbar-item navtext">
+              <p><strong className="has-text-white is-size-5">GUITAR <Logo /> REACT</strong></p>
+            </div>
+          </Link>
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
 
