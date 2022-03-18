@@ -9,7 +9,9 @@ const Home = () => {
     <>
       <Text />
       <SlideShow />
-      <Grilla />
+      <div className = "container grillacontainer is-warning-dark">
+        <Grilla />
+      </div>
     </>
   );
 };

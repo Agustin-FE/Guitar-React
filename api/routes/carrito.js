@@ -53,11 +53,11 @@ routerCarrito.put("/update/:userId/:productId", (req, res) => {
         res.send( req.body ) )
 })
 
-routerCarrito.delete("/destroy/:id", (req, res) => {
+/* routerCarrito.delete("/destroy/:id", (req, res) => {
     const {id} = req.params
     CarritoItem.destroy({ where: { userId: id } })
     .then(() => res.send(id))
-})
+}) */
 
 
 

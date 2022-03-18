@@ -14,7 +14,7 @@ const Details = () =>{
   //const [cartUser,setCartUser] = useState([]);
 
    useEffect(() => {
-     axios(`http://localhost:3001/api/product/${id}`)
+     axios.get(`http://localhost:3001/api/product/select/${id}`)
        .then((res) => res.data)
        .then((data) => {
          return setGuitar(data);
