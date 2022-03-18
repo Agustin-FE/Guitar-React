@@ -1,12 +1,17 @@
 "use strict";
 const nodemailer = require("nodemailer");
 const { applyMiddleware } = require("redux");
+const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 
 // async..await is not allowed in global scope, must use a wrapper
-async function main() {
+async function sendEmail(usuarioid, orden, arrayProducts) {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   //let testAccount = await nodemailer.createTestAccount();
+  const user = User.findOne({where: {usuarioid}})
+  .then(usuarioInfo => {
+    return(usuarioInfo)
+  })
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -21,11 +26,11 @@ async function main() {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "bar@example.com, baz@example.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+    from: '"Guitar React" <guitarreact@gmail.com>',
+    to: user.email , 
+    subject: "Guitar React - Orden:" + orden.ordenDeCompra, 
+    text: 'Hola ' + user.name + ', Tu orden de pedido fue realizada con éxito, a continuacion te brindaremos un detalle de la misma. mediante tu numero de "orden de compra" podras ver el seguimiento del pedido. Muchas gracias por comprar en Guitar React, que tenga rock en su vida ', 
+    html: "<b>Hello world?</b>", 
   });
 
   console.log("Message sent: %s", info.messageId);
@@ -36,7 +41,7 @@ async function main() {
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-main().catch(console.error);
+sendEmail().catch(console.error);
 
 
 
