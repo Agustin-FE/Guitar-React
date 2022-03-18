@@ -23,3 +23,4 @@ Order.init({
 }, { sequelize: db, modelName: 'orders' });  
 
 module.exports = Order;
+

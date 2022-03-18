@@ -21,12 +21,11 @@ const Grilla = () => {
       const rowList = []
       let numberColumns = 3
       const numberOfRows = data.length > 2 
-        ? (data.length - data.length % numberColumns ) / numberColumns
+        ? ((data.length - data.length % numberColumns ) / numberColumns) + 1
         : 1
       //let bodyWidth = document.getElementsByTagName('body')[0].clientWidth 
       for (let i=0 ; i < numberOfRows ; i++)
         rowList[i] = data.slice(i*numberColumns, i*numberColumns+numberColumns)
-          
       setGuitarList( rowList ) 
     })
     

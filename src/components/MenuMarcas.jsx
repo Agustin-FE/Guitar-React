@@ -11,7 +11,7 @@ const MenuMarcas = () => {
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
         <div className="navbar-link has-background-black-ter">
-         <Link to={"/products/Gibson"}><strong className="has-text-white" >Gibson</strong></Link><p className="has-text-white">®-Guitars</p>
+         <Link to={"/products/Gibson"}><p className="has-text-white"> <strong className="has-text-white" >Gibson </strong> ®-Guitars</p></Link>
         </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
@@ -60,13 +60,13 @@ const MenuMarcas = () => {
 
       <div className="navbar-item has-dropdown is-hoverable">
         <div className="navbar-link has-background-black-ter">
-          <Link to={"/fender"}><strong className="has-text-white">Fender</strong></Link><p className="has-text-white">®-Guitars</p>
+          <Link to={"/products/Fender"}><p className="has-text-white"> <strong className="has-text-white" >Fender </strong> ®-Guitars</p></Link>
         </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text">
-                <Link to={"/fender/electrics"} className="icon-text">
+                <Link to={"/products/Fender/electrica"} className="icon-text">
                   <span>Electrics</span>
                 </Link>
                 <span className="icon">
@@ -85,7 +85,7 @@ const MenuMarcas = () => {
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text ">
-                <Link to={"/fender/acoustics"} className="icon-text">
+                <Link to={"/products/Fender/acustica"} className="icon-text">
                   <span>Acoustics</span>
                 </Link>
                 <span className="icon">
@@ -109,13 +109,13 @@ const MenuMarcas = () => {
 
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link has-background-black-ter">
-       <Link to={"/gretsch"}><strong className="has-text-white">Grestch</strong></Link><p className="has-text-white">®-Guitars</p>
+       <Link to={"/products/Epiphone"}><p className="has-text-white"> <strong className="has-text-white" >Epiphone </strong> ®-Guitars</p></Link>
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
             <a className="navbar-item ">
               <span className="icon-text">
-                <Link to={"/gretsch/electrics"} className="icon-text">
+                <Link to={"/products/Epiphone/electrica"} className="icon-text">
                   <span>Electrics</span>
                 </Link>
                 <span className="icon">
@@ -132,7 +132,7 @@ const MenuMarcas = () => {
           <div className="nested dropdown">
             <a className="navbar-item">
               <span className="icon-text ">
-                <Link to={"/gretsch/acoustics"} className="icon-text">
+                <Link to={"/products/Epiphone/acustica"} className="icon-text">
                   <span>Acoustics</span>
                 </Link>
                 <span className="icon">
@@ -148,7 +148,7 @@ const MenuMarcas = () => {
           </div>
           <hr className="navbar-divider"></hr>
           <a href="https://www.gretschguitars.com/" className="navbar-item">
-            Gretsch.commmm
+            Epiphone.com
           </a>
         </div>
       </div>
