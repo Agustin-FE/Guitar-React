@@ -3,17 +3,17 @@ const nodemailer = require("nodemailer");
 const { applyMiddleware } = require("redux");
 const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 
-// async..await is not allowed in global scope, must use a wrapper
-async function sendEmail(usuarioid, orden, arrayProducts) {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
-  //let testAccount = await nodemailer.createTestAccount();
-  const user = User.findOne({where: {usuarioid}})
+
+async function sendEmail(id, orden, arrayProducts) {
+/*   console.log("ESTO ES ID------------------------>",id)
+  console.log("ESTO ES ORDEN------------------------>",orden)
+  console.log("ESTO ES PRDOCUTOS------------------------>", arr) */
+  const user = User.findOne({where: {id}})
   .then(usuarioInfo => {
     return(usuarioInfo)
   })
 
-  // create reusable transporter object using the default SMTP transport
+
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -24,9 +24,7 @@ async function sendEmail(usuarioid, orden, arrayProducts) {
       }
   });
 
-  // send mail with defined transport object
   let info = await transporter.sendMail({
-
     from: '"Guitar React" <guitarreact@gmail.com>',
     to: user.email , 
     subject: "Guitar React - Orden:" + orden.ordenDeCompra, 
@@ -35,14 +33,10 @@ async function sendEmail(usuarioid, orden, arrayProducts) {
   });
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-sendEmail().catch(console.error);
+//sendEmail().catch(console.error);
 
 module.exports = sendEmail
 

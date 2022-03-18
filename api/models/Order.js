@@ -6,18 +6,19 @@ class Order extends S.Model {}
 Order.init({
     fecha:{
         type:S.DATEONLY,
-        allowNull: false
+        //allowNull: false
     },
     formaDePago:{
         type:S.STRING,
+        //allowNull: false
     },
     ordenDeCompra:{
         type:S.INTEGER,
-        allowNull: false
+        //allowNull: false
     },
     totalDeCompra:{
         type:S.INTEGER,
-        allowNull: false
+        //allowNull: false
     }
 }, { sequelize: db, modelName: 'orders' });  
 
