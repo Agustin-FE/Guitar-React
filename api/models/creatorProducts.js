@@ -48,17 +48,6 @@ Products.bulkCreate(
        //link: "https://www.musicstore.com/en_ES/EUR/Gibson-Tony-Iommi-SG-Special-Vintage-Cherry/art-GIT0057262-000"
     },
     {
-       marca: "Gibson", 
-       nombre: "Peter Frampton Phenix Inspired Les Paul Custom Ebony", 
-       descripcion: "Gibson Peter Frampton Phenix Inspired Les Paul Custom Ebony", 
-       categoria:"electrica", 
-       imagen:"https://images.musicstore.de/images/0960/gibson-peter-frampton-phenix-inspired-les-paul-custom-ebony_1_GIT0056596-000.jpg", 
-       imagen2:"https://images.musicstore.de/images/0960/gibson-peter-frampton-phenix-inspired-les-paul-custom-ebony_2_GIT0056596-000.jpg", 
-       precio: 7115, 
-       stock: 10
-       //link: "https://www.musicstore.com/en_ES/EUR/Gibson-Peter-Frampton-Phenix-Inspired-Les-Paul-Custom-Ebony/art-GIT0056596-000"
-    },
-    {
        marca: "Fender", 
        nombre: "Jim Root Telecaster Flat White", 
        descripcion: "Fender Jim Root Telecaster Flat White", 
@@ -202,25 +191,36 @@ Products.bulkCreate(
        //link: "https://www.musicstore.com/en_ES/EUR/Epiphone-Tommy-Thayer-Les-Paul-Electric-Blue-/art-GIT0051737-000"
     },
     {
-       marca: "Epiphone", 
-       nombre: "Joe Pass Emperor II Pro Vintage Sunburst", 
-       descripcion: "Epiphone Joe Pass Emperor II Pro Vintage Sunburst", 
-       categoria: "electrica", 
-       imagen: "https://images.musicstore.de/images/0960/epiphone-joe-pass-emperor-ii-pro-vintage-sunburst_1_GIT0045462-000.jpg", 
-       imagen2: "", 
-       precio: 564, 
-       stock: 10
-       //link: "https://www.musicstore.com/en_ES/EUR/Epiphone-Joe-Pass-Emperor-II-Pro-Vintage-Sunburst-/art-GIT0045462-000"
-    },
-    {
-       marca: "Fender", 
-       nombre: "Tash Sultana Stratocaster", 
-       descripcion: "Fender Tash Sultana Stratocaster", 
-       categoria: "electrica", 
-       imagen: "https://images.musicstore.de/images/0960/fender-tash-sultana-stratocaster_1_GIT0054119-000.jpg", 
-       imagen2: "https://images.musicstore.de/images/0960/fender-tash-sultana-stratocaster_2_GIT0054119-000.jpg", 
-       precio: 1249, 
-       stock: 10
-       //link: "https://www.musicstore.com/en_ES/EUR/Fender-Tash-Sultana-Stratocaster/art-GIT0054119-000"
-    }
+      marca: "Epiphone", 
+      nombre: "Joe Pass Emperor II Pro Vintage Sunburst", 
+      descripcion: "Epiphone Joe Pass Emperor II Pro Vintage Sunburst", 
+      categoria: "acustica", 
+      imagen: "https://images.musicstore.de/images/0960/epiphone-joe-pass-emperor-ii-pro-vintage-sunburst_1_GIT0045462-000.jpg", 
+      imagen2: "", 
+      precio: 564, 
+      stock: 10
+      //link: "https://www.musicstore.com/en_ES/EUR/Epiphone-Joe-Pass-Emperor-II-Pro-Vintage-Sunburst-/art-GIT0045462-000"
+   },
+   {
+      marca: "Fender", 
+      nombre: "Tash Sultana Stratocaster", 
+      descripcion: "Fender Tash Sultana Stratocaster", 
+      categoria: "acustica", 
+      imagen: "https://images.musicstore.de/images/0960/fender-tash-sultana-stratocaster_1_GIT0054119-000.jpg", 
+      imagen2: "https://images.musicstore.de/images/0960/fender-tash-sultana-stratocaster_2_GIT0054119-000.jpg", 
+      precio: 1249, 
+      stock: 10
+      //link: "https://www.musicstore.com/en_ES/EUR/Fender-Tash-Sultana-Stratocaster/art-GIT0054119-000"
+   },
+   {
+      marca: "Gibson", 
+      nombre: "Peter Frampton Phenix Inspired Les Paul Custom Ebony", 
+      descripcion: "Gibson Peter Frampton Phenix Inspired Les Paul Custom Ebony", 
+      categoria:"acustica", 
+      imagen:"https://images.musicstore.de/images/0960/gibson-peter-frampton-phenix-inspired-les-paul-custom-ebony_1_GIT0056596-000.jpg", 
+      imagen2:"https://images.musicstore.de/images/0960/gibson-peter-frampton-phenix-inspired-les-paul-custom-ebony_2_GIT0056596-000.jpg", 
+      precio: 7115, 
+      stock: 10
+      //link: "https://www.musicstore.com/en_ES/EUR/Gibson-Peter-Frampton-Phenix-Inspired-Les-Paul-Custom-Ebony/art-GIT0056596-000"
+   },
  ])
