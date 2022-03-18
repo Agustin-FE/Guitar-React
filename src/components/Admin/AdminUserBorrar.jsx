@@ -16,10 +16,6 @@ const AdminUserBorrar = ()=>{
         .then((data)=> {return setUser(data)})
     },[])
     
-    const handleChange =()=>{
-
-    }
-
     const handleBorrar = (e) =>{
         e.preventDefault();
         console.log(isLoged)
@@ -48,13 +44,9 @@ const AdminUserBorrar = ()=>{
         }  
     }
 
-    const handleCompra = () =>{
-        
-
-    }
-    return <>
+   return <>
     <form className="userModificarAdmin" onSubmit={handleBorrar}>
-        <h3 class="title is-3">Detalle del usuario</h3>
+        <h3 class="title is-3">Detalle del usuario a Borrar</h3>
         <hr/>
             <div class="field">
                 <label class="label">Nombre</label>
@@ -81,7 +73,7 @@ const AdminUserBorrar = ()=>{
             </label>
             <div className="ButonesUserAdmin">
                 <hr/>
-                <button className="buttonDelete" onClick={handleBorrar}> Borrar usuario </button> 
+                <button className="buttonDelete"> Borrar usuario </button> 
             </div>
             </form>
         </>
