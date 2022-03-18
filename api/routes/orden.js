@@ -2,6 +2,7 @@ const express = require('express')
 const routerOrder = express.Router()
 const {db, User, Product, CarritoItem, Order, OrderItem} = require("../models/index");
 const passport = require('passport');
+const sendEmail = require('./sendEmail')
 const { findAll } = require('../models/Users');
 
 routerOrder.get("/showorders/:id", (req,res) => {
@@ -14,12 +15,12 @@ routerOrder.get("/showorders/:id", (req,res) => {
     .catch(err => console.log(err))
 })
 
-routerOrder.post("/createorders/:id", (req,res) => {
+routerOrder.post("/createorders/:userId", (req,res) => {
     const order = req.body
-    const {id} = req.params
+    const {userId} = req.params
     Order.create(order)
     .then(orden => {
-        CarritoItem.get({ where: {id}})
+        CarritoItem.findAll({ where: {userId}})
         .then((products) => {
             const order = products.map( item => {
                 return {
@@ -30,10 +31,12 @@ routerOrder.post("/createorders/:id", (req,res) => {
             } )
             OrderItem.bulkCreate(order)
             .then(() => res.send(orden))
-            sendEmail(id,orden,products)
+            sendEmail(userId,orden,products)
             CarritoItem.destroy({ where: { userId: orden.userId } })
             //.then(() => res.send(id))
         })
     })
     .catch(err => console.log(err))
 })
+
+module.exports = routerOrder;
