@@ -34,9 +34,6 @@ export const removeCart = createAsyncThunk( "REMOVECART", ( args, thunk ) =>
    .then( res => res.data ) 
 )
       
-
-
-
 export const carrito = createReducer( [], { 
    [ initCart.fulfilled ]: ( state, action ) => {
       localStorage.setItem( "cart", JSON.stringify( action.payload ) )

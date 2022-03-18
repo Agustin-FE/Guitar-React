@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { Routes, Route} from "react-router";
 import { useDispatch } from "react-redux";
@@ -14,10 +12,11 @@ import SingIn from "./components/SingIn";
 import Search from "./components/Search";
 import FormCar from "./components/FormCar";
 import { setInitCart } from "./store/carrito";
-import UserAdmin from "./components/Admin/AdminUserListBorrar";
-import DetailsUserAdmin from "./components/Admin/AdminUserBorrar";
 import SlideShow from "./components/SlideShow";
 import EnCamino from "./components/EnCamino";
+import AdminUserModificar from "./components/Admin/AdminUserModificar";
+import AdminUserList from "./components/Admin/AdminUserList";
+import AdminUserBorrar from "./components/Admin/AdminUserBorrar";
 import Grilla from "./components/Gtilla";
 
 const App = () => {
@@ -42,8 +41,10 @@ const App = () => {
         <Route path="/products/:marca/:categoria/:serie" element={<Grilla />}/>
 
         <Route path="/encamino" element={<EnCamino />} />
-        <Route path="/admin/user/delete" element={<UserAdmin />}/>
-        <Route path="/admin/user/delete/:userId" element={<DetailsUserAdmin/>}/>
+        <Route path="/admin/user/delete" element={<AdminUserList />}/>
+        <Route path="/admin/user/delete/:userId" element={<AdminUserBorrar/>}/>
+        <Route path="/admin/user/modify" element={<AdminUserList />}/>
+        <Route path="/admin/user/modify/:userId" element={<AdminUserModificar />}/>
 
         {/* <Route path="*" element={<Navigate to = "/"/>} /> */}
 
