@@ -60,7 +60,7 @@ passport.deserializeUser(function (id, done) {
 
 app.use("/api", routes)
 
-db.sync({ force: false }).then(() => {
+db.sync({ force: !true }).then(() => {
     app.listen(3001, () => {
       console.log("Escuchando en puerto 3001");
     });
