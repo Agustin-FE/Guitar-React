@@ -4,6 +4,8 @@ import { setUser } from "../store/user";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
+const Swal = require('sweetalert2');
+
 export const SingIn = () => {
   let [name, setName] = useState(""),
     [surname, setSurname] = useState(""),
@@ -40,7 +42,22 @@ export const SingIn = () => {
             .then((res) => res.data)
             .then((datos) => {
               dispatch(setUser(datos));
-              console.log("Ha iniciado sesion: ", datos.email);
+              Swal.fire({
+                title: 'Bienvenido ' + datos.name + ' ' + datos.surname,
+                text:'Gracias por Registrarse ',
+                showConfirmButton: false,
+                timer: 5500,
+                width: 550,
+                padding: '2em',
+                color: '#bfa054',
+                background: '#fff',
+                backdrop: `
+                  rgba(191,160,84,0.5)
+                  url("https://i.gifer.com/XfQC.gif")
+                  top center
+                  no-repeat
+                `
+              })
               setName("");
               setSurname("");
               setEmail("");

@@ -16,7 +16,7 @@ const AdminUserList = ()=>{
     },[location])
     
     return (
-    <div>
+    <div className="AdminListUser">
     <h3 class="title is-3">Listado de usuarios - {abm} </h3>
     <hr/>
                 {users.map((user, i)=>{return ( <Link to={'/admin/user/'+ abm +'/'+ user.id }>
