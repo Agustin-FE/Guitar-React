@@ -72,7 +72,7 @@ export const SingIn = () => {
          
          <form onSubmit={ signSubmit } >
             <div className="field">
-               <input className="input is-primary" onChange = { nameHandler } 
+               <input className="input is-warning-dark" onChange = { nameHandler } 
                   value = { name } 
                   type = "text"  
                   placeholder="Nombre"  
@@ -80,7 +80,7 @@ export const SingIn = () => {
             </div>
             
             <div className="field">
-               <input className="input is-primary" onChange = { surnameHandler } 
+               <input className="input is-warning-dark" onChange = { surnameHandler } 
                   value = { surname } 
                   type = "text"  
                   placeholder="Apellido"  
@@ -88,7 +88,7 @@ export const SingIn = () => {
             </div>
 
             <div className="field">
-               <input className="input is-primary" onChange = { emailHandler } 
+               <input className="input is-warning-dark" onChange = { emailHandler } 
                   value = { email } 
                   type="email" 
                   placeholder="Email"  
@@ -96,7 +96,7 @@ export const SingIn = () => {
             </div>
          
             <div className="field">
-               <input className="input is-primary" onChange = { passwordHandler } 
+               <input className="input is-warning-dark" onChange = { passwordHandler } 
                   value = { password } 
                   type = "password"  
                   placeholder="Password"  
@@ -104,7 +104,7 @@ export const SingIn = () => {
             </div>
 
             <div className="field">
-               <input className="input is-primary" onChange = { phoneHandler } 
+               <input className="input is-warning-dark" onChange = { phoneHandler } 
                   value = { phone } 
                   type = "text"  
                   placeholder="Telefono"  
@@ -112,7 +112,7 @@ export const SingIn = () => {
             </div>
 
             <div className="field">
-               <input className="input is-primary" onChange = { directionHandler } 
+               <input className="input is-warning-dark" onChange = { directionHandler } 
                   value = { direction } 
                   type = "text"  
                   placeholder="Direccion"  
@@ -120,7 +120,7 @@ export const SingIn = () => {
             </div>
 
             <div className = "buttons is-right" >
-               <button className="buttonCompra" type="submit" name = "Registrarse">
+               <button className="buttonTienda" type="submit" name = "Registrarse">
                   Registrarse
                </button>
             </div>

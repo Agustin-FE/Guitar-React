@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <Text />
       <SlideShow />
-      <div className = "container grillacontainer">
+      <div className = "container grillacontainer is-warning-dark">
         <Grilla />
       </div>
     </>
