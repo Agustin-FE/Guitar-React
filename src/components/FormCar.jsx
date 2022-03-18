@@ -45,7 +45,7 @@ const FormCar = ({total}) => {
     {formaDePago: "efectivo", totalDeCompra: total, fecha: fecha, ordenDeCompra: ordenDeCompra, userId: user.id })
     .then((res) => res.data)
     .then((data) => {
-        return setOrden(data);
+        setOrden(data);
         setIsSell(!isSell)
     });
 }
