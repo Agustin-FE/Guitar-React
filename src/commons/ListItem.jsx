@@ -12,7 +12,7 @@ const ListItem = ( { productId } ) =>{
 
     useEffect(()=>{
         
-        axios(`http://localhost:3001/api/product/${productId}`)
+        axios(`http://localhost:3001/api/product/select/${productId}`)
         .then((res) => res.data)
         .then((data)=> setGuitar(data) )
     },[])
