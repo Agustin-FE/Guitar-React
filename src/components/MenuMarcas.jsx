@@ -148,7 +148,7 @@ const MenuMarcas = () => {
           </div>
           <hr className="navbar-divider"></hr>
           <a href="https://www.gretschguitars.com/" className="navbar-item">
-            Gretsch.com
+            Gretsch.commmm
           </a>
         </div>
       </div>
