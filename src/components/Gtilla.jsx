@@ -7,17 +7,13 @@ import { useParams } from "react-router"
 
 const Grilla = () => {
 
-  
-    
-  const [guitarList, setGuitarList] = useState([])
-
+  let [guitarList, setGuitarList] = useState([])
   let { marca, categoria, serie } = useParams()
 
   useEffect( ()=> {
     marca = marca ? "/"+marca : ""
     categoria = categoria ? "/"+categoria : ""
     serie = serie ? "/"+serie : ""
-    console.log(`Las guitarras, http://localhost:3001/api/product${marca}${categoria}${serie}`)
     axios
     .get(`http://localhost:3001/api/product${marca}${categoria}${serie}` )
     .then( res => res.data )
@@ -36,6 +32,8 @@ const Grilla = () => {
     
   }, [marca, categoria, serie] )
   return (
+
+    <div className = "container grillacontainer">
     <table class="table is-fullwidth grilla is-flex is-justify-content-center is-align-content-center">
       <tbody>
         { guitarList.map( ( row, i ) =>{
@@ -43,20 +41,12 @@ const Grilla = () => {
             <tr key = {i}>
               <TilesRow rowList = { row } />
             </tr>
-            )
-        }
-            
+            ) }   
         ) }
       </tbody>
     </table>
+    </div>
   )
-  {/* return (
-      <div className = "grilla columns is-variable" >
-        { guitarList.map( (producto, i) =>
-            <Tiles producto = { producto } key = {i}/>
-        ) } 
-      </div>
-    ) */}
 }
 
 

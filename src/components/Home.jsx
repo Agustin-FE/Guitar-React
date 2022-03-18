@@ -9,9 +9,7 @@ const Home = () => {
     <>
       <Text />
       <SlideShow />
-      <div className = "container grillacontainer">
-        <Grilla />
-      </div>
+      <Grilla />
     </>
   );
 };

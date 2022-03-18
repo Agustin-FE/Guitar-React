@@ -29,11 +29,12 @@ routerOrder.post("/createorders/:userId", (req,res) => {
                     productId: item.productId
                 }
             } )
+            
             OrderItem.bulkCreate(order)
             .then(() => res.send(orden))
-            sendEmail(userId,orden,products)
-            CarritoItem.destroy({ where: { userId: orden.userId } })
-            //.then(() => res.send(id))
+
+            CarritoItem.destroy({ where: { userId: userId } })
+            .then(() => sendEmail(userId,orden,products))
         })
     })
     .catch(err => console.log(err))

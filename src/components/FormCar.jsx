@@ -1,14 +1,19 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import EnCamino from "./EnCamino";
 
 const FormCar = () => {
   let [name, setName] = useState(""),
     [surname, setSurname] = useState(""),
     [address, setAddress] = useState(""),
     [phone, setPhone] = useState(""),
-    [send, setSend] = useState(false);
+    [send, setSend] = useState(false),
+    [isSell, setIsSell] = useState(false),
+    [orden, setOrden] = useState(null),
+    [total, setTotal] = useState(0)
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user)
 
   useEffect(() => {
     if (user) {
@@ -17,15 +22,7 @@ const FormCar = () => {
       setAddress(user.direction);
       setPhone(user.phoneNumber);
     }
-  }, [user]);
-
-  useEffect(() => {
     if (send) {
-      // axios
-      // .post("", { name: name,surname: surname, address: address, phone: phone } )
-      // .then (res => res.data)
-      // .then( ( datos ) => {
-      // })
       console.log({
         name: name,
         surname: surname,
@@ -38,7 +35,18 @@ const FormCar = () => {
       setPhone("");
     }
     setSend(false);
-  }, [send]);
+  }, [user, send]);
+
+  const onClickHandler = () => {
+    
+    axios.post(`http://localhost:3001/api/orden/createorders/${user.id}`, 
+    {formaDePago: "efectivo", totalDeCompra: 1000})
+    .then((res) => res.data)
+    .then((data) => {
+        return setOrden(data);
+        setIsSell(!isSell)
+    });
+}
 
   const changeName = (e) => {
     e.preventDefault();
@@ -107,7 +115,7 @@ const FormCar = () => {
 
         <div className="field">
           <input
-            className="input is-primary"
+            className="input is-black-ter"
             onChange={changePhone}
             value={phone}
             type="text"
@@ -116,6 +124,12 @@ const FormCar = () => {
           />
         </div>
       </form>
+      <div className="finalizarCompra">
+        <div>
+          <button className="buttonCompra" onClick={onClickHandler}> Finalizar Compra </button>
+        </div>
+      </div>
+      {isSell && <EnCamino />}
     </>
   );
 };
