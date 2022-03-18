@@ -8,6 +8,9 @@ import LogInCard from "./UserCard/LogInCard";
 import LogedCard from "./UserCard/LogedCard";
 import { useSelector } from "react-redux";
 import MenuMarcas from "./MenuMarcas"
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/user";
 
 
 const Navbar = () => {
@@ -16,6 +19,8 @@ const Navbar = () => {
 
   const isLoged = useSelector( state => state.user )
 
+  const dispatch = useDispatch();
+
   window.addEventListener('click', e => {
     let buttonLog = document.getElementById('clickLog')
     let tarjeta = document.getElementById('clickCard')
@@ -23,6 +28,15 @@ const Navbar = () => {
       setLogInClick(false)
     }
   })
+
+  useEffect(()=> 
+  {axios
+    .get("http://localhost:3001/api/users/me")
+    .then(res=> res.data)
+    .then (datos=>{
+      dispatch (setUser (datos))
+    })},
+   [])
   
   return (
     <>
@@ -52,9 +66,10 @@ const Navbar = () => {
                 <br />
                 <br />
                 <br />
+
                 <button id="clickLog" className="button has-background-warning-dark" 
                   onClick={() => setLogInClick(!logInClick)}>
-                    <p className="has-text-white">Login</p>
+                    <p className="has-text-white">{!isLoged?"Login":"Logout"}</p>
                 </button>
                 <Link to={"/cart"}>
                 <button className="button has-background-warning-dark">
