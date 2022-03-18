@@ -11,7 +11,7 @@ const MenuMarcas = () => {
     <div className="navbar-start">
       <div className="navbar-item has-dropdown is-hoverable">
         <div className="navbar-link has-background-black-ter">
-         <Link to={"/products/Gibson"}><strong className="has-text-white" >Gibson</strong><p className="has-text-white">®-Guitars</p></Link>
+         <Link to={"/products/Gibson"}><strong className="has-text-white" >Gibson</strong></Link><p className="has-text-white">®-Guitars</p>
         </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
@@ -60,7 +60,7 @@ const MenuMarcas = () => {
 
       <div className="navbar-item has-dropdown is-hoverable">
         <div className="navbar-link has-background-black-ter">
-          <Link to={"/fender"}><strong className="has-text-white">Fender</strong><p className="has-text-white">®-Guitars</p></Link>
+          <Link to={"/fender"}><strong className="has-text-white">Fender</strong></Link><p className="has-text-white">®-Guitars</p>
         </div>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
@@ -109,7 +109,7 @@ const MenuMarcas = () => {
 
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link has-background-black-ter">
-       <strong className="has-text-white">Grestch</strong><p className="has-text-white">®-Guitars</p> 
+       <Link to={"/gretsch"}><strong className="has-text-white">Grestch</strong></Link><p className="has-text-white">®-Guitars</p>
         </a>
         <div className="navbar-dropdown">
           <div className="nested dropdown">
