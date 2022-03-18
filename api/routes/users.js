@@ -33,13 +33,15 @@ routerUser.get("/me", (req, res) => {
 });
 
 routerUser.post("/me", (req,res) => {
-    const {name,surname,email,password} = req.body
+    const {name,surname,email,password,direction,phoneNumber} = req.body
     User.update(req.body,
     { where:{
         name : name,
         surname : surname,
         email : email,
-        password: password
+        password: password,
+        direction: direction,
+        phoneNumber: phoneNumber
     }})
     .then((data) => res.sendStatus(200))
     .catch(err => console.log(err))

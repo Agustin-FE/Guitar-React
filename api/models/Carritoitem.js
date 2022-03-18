@@ -6,7 +6,7 @@ class CarritoItem extends S.Model {}
 CarritoItem.init({
   cantidad:{
     type: S.INTEGER,
-},
+  },
 }, { sequelize: db, modelName: 'carritoItem' });  
 
 

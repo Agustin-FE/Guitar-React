@@ -48,7 +48,7 @@ const Cart = () =>{
           </div>
         </div>
         <div className="formularioEnvio">
-          <FormCar />
+          <FormCar total= {total} />
         </div>
       
       </div>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import EnCamino from "./EnCamino";
 
-const FormCar = () => {
+const FormCar = ({total}) => {
   let [name, setName] = useState(""),
     [surname, setSurname] = useState(""),
     [address, setAddress] = useState(""),
@@ -11,7 +11,9 @@ const FormCar = () => {
     [send, setSend] = useState(false),
     [isSell, setIsSell] = useState(false),
     [orden, setOrden] = useState(null),
-    [total, setTotal] = useState(0)
+    [formapago, setFormapago] = useState("")
+  let fecha = new Date();
+  let ordenDeCompra = Math.floor((Math.random() * (10000 - 1 + 1)));
 
   const user = useSelector((state) => state.user)
 
@@ -40,7 +42,7 @@ const FormCar = () => {
   const onClickHandler = () => {
     
     axios.post(`http://localhost:3001/api/orden/createorders/${user.id}`, 
-    {formaDePago: "efectivo", totalDeCompra: 1000})
+    {formaDePago: "efectivo", totalDeCompra: total, fecha: fecha, ordenDeCompra: ordenDeCompra, userId: user.id })
     .then((res) => res.data)
     .then((data) => {
         return setOrden(data);
