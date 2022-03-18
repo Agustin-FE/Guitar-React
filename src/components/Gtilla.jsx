@@ -17,13 +17,16 @@ const Grilla = () => {
     marca = marca ? "/"+marca : ""
     categoria = categoria ? "/"+categoria : ""
     serie = serie ? "/"+serie : ""
+    console.log(`Las guitarras, http://localhost:3001/api/product${marca}${categoria}${serie}`)
     axios
     .get(`http://localhost:3001/api/product${marca}${categoria}${serie}` )
     .then( res => res.data )
     .then( data => {
       const rowList = []
-      let numberColumns = 4
-      const numberOfRows = (data.length - data.length % numberColumns ) / numberColumns
+      let numberColumns = 3
+      const numberOfRows = data.length > 2 
+        ? (data.length - data.length % numberColumns ) / numberColumns
+        : 1
       //let bodyWidth = document.getElementsByTagName('body')[0].clientWidth 
       for (let i=0 ; i < numberOfRows ; i++)
         rowList[i] = data.slice(i*numberColumns, i*numberColumns+numberColumns)
@@ -33,7 +36,7 @@ const Grilla = () => {
     
   }, [marca, categoria, serie] )
   return (
-    <table class="table is-fullwidth">
+    <table class="table is-fullwidth grilla is-flex is-justify-content-center is-align-content-center">
       <tbody>
         { guitarList.map( ( row, i ) =>{
           return (

@@ -13,14 +13,14 @@ const Tiles = ( { producto } ) => {
         <div className="tile">
           <div className="tile2 columns">
               { producto.marca === "Gibson" 
-                ? <GibsonIcon className = "gibson-icon column"/> 
+                ? <GibsonIcon className = "gibson-icon column adelante"/> 
                 : producto.marca === "Fender" 
-                  ? <FenderIcon className = "fender-icon column"/> 
-                  : <EpiphoneIcon className = "epiphone-icon column"/> }
+                  ? <FenderIcon className = "fender-icon column adelante"/> 
+                  : <EpiphoneIcon className = "epiphone-icon column adelante"/> }
                 
-              <img className = "guitarimg column" src = {producto.imagen}/>
+              <img className = "guitarimg" src = {producto.imagen}/>
               
-              <p>U$S { producto.precio }</p>
+              <p className = "adelante tiletext" >U$S { producto.precio }</p>
               
 
           </div>

@@ -8,6 +8,7 @@ const sessions = require("express-session");
 const {db, User, Product, CarritoItem, Order, OrderItem} = require("./models/index");
 const morgan = require("morgan");
 const volleyball = require('volleyball');
+const main = require('./routes/sendEmail');
 
 app.use(volleyball)
 app.use(express.json())

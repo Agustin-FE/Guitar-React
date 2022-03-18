@@ -15,17 +15,18 @@ async function sendEmail(usuarioid, orden, arrayProducts) {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
-    },
+      user: "guitarreact@gmail.com",
+      pass: "vlcqkkcvxvosxylm"
+      }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
+
     from: '"Guitar React" <guitarreact@gmail.com>',
     to: user.email , 
     subject: "Guitar React - Orden:" + orden.ordenDeCompra, 
@@ -42,6 +43,8 @@ async function sendEmail(usuarioid, orden, arrayProducts) {
 }
 
 sendEmail().catch(console.error);
+
+module.exports = sendEmail
 
 
 
