@@ -5,7 +5,7 @@ const cors = require("cors")
 const passport = require("passport")
 const localStrategy = require("passport-local").Strategy;
 const sessions = require("express-session");
-const {db, User, Product, CarritoItem, Order, OrderItem} = require("./models/index");
+const {db, User} = require("./models/index");
 const morgan = require("morgan");
 const volleyball = require('volleyball');
 
@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 app.use(morgan("tiny"));
 
-app.use(sessions({ secret: "tmdb"}));
+app.use(sessions({ secret: "e-commerce", resave: true, saveUninitialized: true}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -44,6 +44,7 @@ passport.use(
     }
   )
 );
+
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

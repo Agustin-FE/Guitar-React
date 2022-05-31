@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../config/db');
 const User = require('./Users');
 const Product = require('./Products')
 const Order = require('./Order')
