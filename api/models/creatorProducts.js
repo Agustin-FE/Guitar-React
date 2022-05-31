@@ -1,5 +1,4 @@
 const Products = require('./Products.js')
-const productos = require('../guitarList.json')
 const User = require('./Users')
 
 User.create( {    
