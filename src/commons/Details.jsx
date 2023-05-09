@@ -11,7 +11,7 @@ const Details = () =>{
   const { id } = useParams();
   const [guitar, setGuitar] = useState([]);
   const user = useSelector( state => state.user )
-  //const [cartUser,setCartUser] = useState([]);
+ 
 
    useEffect(() => {
      axios.get(`http://localhost:3001/api/product/select/${id}`)
